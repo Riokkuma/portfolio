@@ -4,6 +4,55 @@
 
 ---
 
+## 2026年2月13日 - photoフォルダ対応
+
+### 📁 ファイル構成の変更
+
+#### photoフォルダの導入
+- すべての画像・PDFファイルを`photo/`フォルダに整理
+- HTMLファイルのパスを`photo/`対応に変更
+
+#### 変更したファイル
+- **index.html** - About Me写真のパスを`photo/photo1.jpg`に変更
+- **robot.html** - すべての画像・PDFパスを`photo/`対応に変更
+  - robot-main.jpg
+  - plate-before.jpg
+  - plate-after.jpg
+  - bear-cad.jpg
+  - demo.jpg
+  - robot-presentation.pdf
+
+#### 更新したドキュメント
+- **README.md** - ファイル構成にphotoフォルダ追加
+- **ROBOT-IMAGE-GUIDE.md** - photoフォルダ対応の手順に更新
+- **PHOTO-FOLDER-GUIDE.md** - 新規作成（photoフォルダの使い方）
+
+#### 新しいファイル構成
+```
+portfolio/
+├── index.html
+├── robot.html
+├── ux-design.html
+├── beauty-sns.html
+├── pege1.html
+├── photo/                          ← 新規フォルダ
+│   ├── photo1.jpg
+│   ├── photo2.jpg
+│   ├── robot-main.jpg
+│   ├── plate-before.jpg
+│   ├── plate-after.jpg
+│   ├── bear-cad.jpg
+│   ├── demo.jpg
+│   └── robot-presentation.pdf
+├── README.md
+├── CHANGELOG.md
+├── PROJECT-EDIT-GUIDE.md
+├── ROBOT-IMAGE-GUIDE.md
+└── PHOTO-FOLDER-GUIDE.md           ← 新規ガイド
+```
+
+---
+
 ## 2026年2月13日 - 公開準備版
 
 ### 🎉 完成・公開準備

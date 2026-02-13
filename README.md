@@ -66,14 +66,15 @@ portfolio/
 ├── ux-design.html                  # UXデザインプロジェクト詳細
 ├── beauty-sns.html                 # 美容垢SNS運用詳細
 ├── pege1.html                      # データベースプロジェクト詳細
-├── robot-presentation.pdf          # ロボットのプレゼン資料
-├── photo1.jpg                      # About Me写真1
-├── photo2.jpg                      # About Me写真2
-├── robot-main.jpg                  # ロボットメイン写真
-├── plate-before.jpg                # 初期プレート
-├── plate-after.jpg                 # 改良プレート
-├── bear-cad.jpg                    # CADのクマ
-├── demo.jpg                        # デモ写真
+├── photo/                          # 画像・PDFフォルダ
+│   ├── photo1.jpg                  # About Me写真1
+│   ├── photo2.jpg                  # About Me写真2
+│   ├── robot-main.jpg              # ロボットメイン写真
+│   ├── plate-before.jpg            # 初期プレート
+│   ├── plate-after.jpg             # 改良プレート
+│   ├── bear-cad.jpg                # CADのクマ
+│   ├── demo.jpg                    # デモ写真
+│   └── robot-presentation.pdf      # ロボットのプレゼン資料
 ├── README.md                       # このファイル
 ├── CHANGELOG.md                    # 変更履歴
 └── PROJECT-EDIT-GUIDE.md           # プロジェクト編集ガイド
@@ -135,8 +136,13 @@ portfolio/
 
 1. 画像ファイルを準備（推奨サイズ: 800x800px）
 2. ファイル名を変更（例: `photo1.jpg`）
-3. `index.html` と同じフォルダに配置
-4. HTMLファイルで画像パスを確認
+3. `photo` フォルダに配置
+   ```
+   portfolio/
+   └── photo/
+       └── photo1.jpg  ← ここに配置
+   ```
+4. HTMLファイルで画像パスを確認（`photo/photo1.jpg`）
 
 ---
 
