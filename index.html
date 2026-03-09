@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veronica - Portfolio</title>
+    <title>Veronica - Portfolio | PR・クリエイティブ制作</title>
+    <meta name="description" content="Veronica（ヴェロニカ）のポートフォリオ。高度専門士情報技術科で学びながら、PRやクリエイティブ制作、ロボティクス開発など幅広く活動しています。">
+    <meta name="keywords" content="Veronica, ヴェロニカ, ポートフォリオ, クリエイティブ制作, PR, ロボティクス, ITパスポート, MOS">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veronica-kuma.example.com/">
+    <meta property="og:title" content="Veronica - Portfolio">
+    <meta property="og:description" content="デザインと開発でユーザーに寄り添うものづくりを。Veronicaの活動を紹介します。">
+    <meta property="og:image" content="https://veronica-kuma.example.com/photo/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://veronica-kuma.example.com/">
+    <meta property="twitter:title" content="Veronica - Portfolio">
+    <meta property="twitter:description" content="デザインと開発でユーザーに寄り添うものづくりを。Veronicaの活動を紹介します。">
+    <meta property="twitter:image" content="https://veronica-kuma.example.com/photo/og-image.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,6 +45,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -35,27 +53,36 @@
         }
 
         @keyframes bounce-slow {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-10px) rotate(5deg);
             }
         }
 
         @keyframes wiggle {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: rotate(-3deg);
             }
+
             50% {
                 transform: rotate(3deg);
             }
@@ -66,9 +93,11 @@
                 opacity: 0;
                 transform: scale(0);
             }
+
             50% {
                 opacity: 0.3;
             }
+
             100% {
                 opacity: 0;
                 transform: scale(1.5);
@@ -143,8 +172,30 @@
         }
     </style>
 </head>
+
 <body class="bg-bg-main">
-    <div class="max-w-7xl mx-auto px-6 py-16">
+    <!-- Navigation Header -->
+    <nav id="main-nav"
+        class="fixed top-0 left-0 w-full z-50 bg-bg-main/80 backdrop-blur-md border-b border-primary/10 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-dark title-font">Veronica</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#about" class="text-text-main hover:text-primary transition-colors font-medium">About</a>
+                <a href="#qualifications"
+                    class="text-text-main hover:text-primary transition-colors font-medium">Qualifications</a>
+                <a href="#skills" class="text-text-main hover:text-primary transition-colors font-medium">Skills</a>
+                <a href="#projects" class="text-text-main hover:text-primary transition-colors font-medium">Projects</a>
+            </div>
+            <button class="md:hidden text-dark" aria-label="メニューを開く">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
         <!-- Hero Section -->
         <header class="min-h-screen flex flex-col justify-center items-center text-center mb-32 relative">
             <!-- クマの装飾 -->
@@ -152,51 +203,54 @@
             <div class="bear-decoration text-7xl top-20 right-20 float" style="animation-delay: 0.5s;">🧸</div>
             <div class="bear-decoration text-6xl bottom-40 left-20 wiggle" style="animation-delay: 1s;">🐻</div>
             <div class="bear-decoration text-8xl bottom-20 right-10 float" style="animation-delay: 1.5s;">🧸</div>
-            
+
             <!-- 足跡 -->
             <div class="bear-decoration text-5xl top-1/4 left-1/3" style="animation-delay: 0s;">🐾</div>
             <div class="bear-decoration text-4xl top-1/3 right-1/4" style="animation-delay: 0.8s;">🐾</div>
             <div class="bear-decoration text-5xl bottom-1/3 left-1/4" style="animation-delay: 1.6s;">🐾</div>
-            
+
             <div class="mb-8 float relative z-10">
                 <div class="text-9xl filter drop-shadow-lg">
                     🧸
                 </div>
             </div>
-            
+
             <h1 class="text-7xl md:text-8xl font-bold mb-6 text-dark title-font fade-in-up relative z-10">
                 Veronica
             </h1>
-            
+
             <p class="text-3xl md:text-4xl text-primary mb-4 fade-in-up relative z-10" style="animation-delay: 0.2s;">
                 ヴェロニカ ᩚ
             </p>
-            
+
             <p class="text-xl text-text-main max-w-2xl mb-12 fade-in-up relative z-10" style="animation-delay: 0.4s;">
                 PR・クリエイティブ制作 | 高度専門士情報技術科
             </p>
 
             <div class="flex flex-wrap gap-6 justify-center fade-in-up relative z-10" style="animation-delay: 0.6s;">
                 <a href="https://twitter.com/Veronica_kuma" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-accent-pink">
+                    class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-accent-pink">
                     <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                     </svg>
                     <span class="font-medium text-text-main">@Veronica_kuma</span>
                 </a>
 
                 <a href="https://lipscosme.com/members/veronica_kuma" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-accent-pink">
+                    class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-accent-pink">
                     <svg class="w-5 h-5 text-accent-pink" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+                        <path
+                            d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
                     </svg>
                     <span class="font-medium text-text-main">LIPS 💄</span>
                 </a>
-                
+
                 <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-primary">
+                    class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-primary">
                     <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                     <span class="font-medium text-text-main">GitHub</span>
                 </a>
@@ -204,10 +258,10 @@
         </header>
 
         <!-- About Section -->
-        <section class="mb-32">
+        <section id="about" class="mb-32 scroll-mt-24">
             <div class="bg-card-bg rounded-3xl p-12 shadow-xl border-2 border-primary/20">
                 <div class="flex items-center gap-3 mb-8">
-                    <span class="text-4xl">🌟</span>
+                    <span class="text-4xl" aria-hidden="true">🌟</span>
                     <h2 class="text-4xl font-bold text-dark title-font">
                         About Me
                     </h2>
@@ -216,35 +270,39 @@
                 <!-- 写真ギャラリー -->
                 <div class="grid grid-cols-2 gap-4 mb-8">
                     <!-- 写真1 -->
-                    <div class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
-                        <img src="photo/photo1.jpg" alt="Veronicaの写真1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
+                    <figure
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
+                        <img src="photo/photo1.jpg" alt="仕事に打ち込むVeronicaの様子"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </figure>
                     <!-- 写真2 -->
-                    <div class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
-                        <img src="photo/photo2.jpg" alt="Veronicaの写真2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
+                    <figure
+                        class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
+                        <img src="photo/photo2.jpg" alt="クリエイティブな活動中のVeronica"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </figure>
                 </div>
-                
-                <div class="text-text-main">
+
+                <article class="text-text-main">
                     <p class="text-lg leading-relaxed mb-4">
-                        こんにちは！Veronicaです 🧸
+                        こんにちは！Veronicaです <span aria-hidden="true">🧸</span>
                     </p>
                     <p class="text-lg leading-relaxed mb-4">
                         現在、高度専門士情報技術科で学びながら、PRやクリエイティブ制作を中心に活動しています。
                         デザインと開発のスキルを活かし、ユーザーに寄り添ったものづくりを心がけています。
                     </p>
                     <p class="text-lg leading-relaxed">
-                        <span class="font-semibold text-primary">好きなこと：</span> 
+                        <span class="font-semibold text-primary">好きなこと：</span>
                         デザイン、コーディング、コスメ、クリエイティブな表現
                     </p>
-                </div>
+                </article>
             </div>
         </section>
 
         <!-- 保有資格 -->
-        <section class="mb-32">
+        <section id="qualifications" class="mb-32 scroll-mt-24">
             <div class="flex items-center gap-3 mb-12">
-                <span class="text-4xl">🏆</span>
+                <span class="text-4xl" aria-hidden="true">🏆</span>
                 <h2 class="text-4xl font-bold text-dark title-font">
                     保有資格
                 </h2>
@@ -320,9 +378,9 @@
         </section>
 
         <!-- Skills Section -->
-        <section class="mb-32">
+        <section id="skills" class="mb-32 scroll-mt-24">
             <div class="flex items-center gap-3 mb-12">
-                <span class="text-4xl">💻</span>
+                <span class="text-4xl" aria-hidden="true">💻</span>
                 <h2 class="text-4xl font-bold text-dark title-font">
                     授業で触れてきた技術
                 </h2>
@@ -460,7 +518,8 @@
                 </div>
 
                 <!-- その他の技術 -->
-                <div class="bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20 md:col-span-2 lg:col-span-3">
+                <div
+                    class="bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20 md:col-span-2 lg:col-span-3">
                     <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                         <span>✨</span> その他
                     </h3>
@@ -495,9 +554,9 @@
         </section>
 
         <!-- 📁 Projects -->
-        <section class="mb-32" id="projects">
+        <section id="projects" class="mb-32 scroll-mt-24">
             <div class="flex items-center gap-3 mb-12">
-                <span class="text-4xl">📁</span>
+                <span class="text-4xl" aria-hidden="true">📁</span>
                 <h2 class="text-4xl font-bold text-dark title-font">
                     Projects
                 </h2>
@@ -505,10 +564,11 @@
 
 
             <!-- 🎯 プロジェクト 1：半自動メイクブラシ洗浄ロボット -->
-            <div class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div
+                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">半自動メイクブラシ洗浄ロボット 🤖</h3>
-                    
+
                     <div class="flex flex-wrap gap-2">
                         <span class="tag-chip">3Dプリント</span>
                         <span class="tag-chip">CAD (Onshape)</span>
@@ -568,21 +628,24 @@
                     </p>
                 </div>
 
-                <a href="robot.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
+                <a href="robot.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
                     詳しく見る
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                 </a>
             </div>
             <!-- 🎯 プロジェクト 1 ここまで -->
 
             <!-- 🎯 プロジェクト 2：モバイルアプリ UXデザイン -->
-            <div class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div
+                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">モバイルアプリ UXデザイン 📱</h3>
-                    
+
                     <!-- ✏️ 使用技術タグ -->
                     <div class="flex flex-wrap gap-2">
                         <span class="tag-chip">Figma</span>
@@ -647,21 +710,24 @@
                 </div>
 
                 <!-- ✏️ リンクボタン -->
-                <a href="ux-design.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
+                <a href="ux-design.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
                     詳しく見る
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                 </a>
             </div>
             <!-- 🎯 プロジェクト 2 ここまで -->
 
             <!-- 🎯 プロジェクト 3：美容垢SNS運用 -->
-            <div class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div
+                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">美容垢 SNS運用 💄</h3>
-                    
+
                     <!-- ✏️ 使用技術タグ -->
                     <div class="flex flex-wrap gap-2">
                         <span class="tag-chip">SNSマーケティング</span>
@@ -726,21 +792,24 @@
                 </div>
 
                 <!-- ✏️ リンクボタン -->
-                <a href="beauty-sns.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
+                <a href="beauty-sns.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
                     詳しく見る
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                 </a>
             </div>
             <!-- 🎯 プロジェクト 3 ここまで -->
 
             <!-- 🎯 プロジェクト 4：プレゼンテーション資料 -->
-            <div class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div
+                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">プレゼンテーション資料 📊</h3>
-                    
+
                     <!-- ✏️ 使用技術タグ -->
                     <div class="flex flex-wrap gap-2">
                         <span class="tag-chip">PowerPoint</span>
@@ -803,10 +872,12 @@
                 </div>
 
                 <!-- ✏️ リンクボタン -->
-                <a href="presentations.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
+                <a href="presentations.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-dark transition-colors mt-4">
                     資料を見る
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                 </a>
             </div>
@@ -816,27 +887,70 @@
 
         <!-- Contact Section -->
         <section class="mb-16">
-            <div class="bg-gradient-to-br from-accent-pink/30 to-accent-yellow/30 rounded-3xl p-12 text-center shadow-xl border-2 border-primary/30">
+            <div
+                class="bg-gradient-to-br from-accent-pink/30 to-accent-yellow/30 rounded-3xl p-12 text-center shadow-xl border-2 border-primary/30">
                 <span class="text-6xl mb-6 inline-block">✉️</span>
                 <h2 class="text-4xl font-bold text-dark mb-6 title-font">
                     Let's Connect!
                 </h2>
-                <p class="text-text-main text-lg mb-8">
-                    お仕事のご依頼やご質問など、お気軽にご連絡ください
-                </p>
-                <a href="/cdn-cgi/l/email-protection#2d5442585f0348404c44416d48554c405d4148034e4240" class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:bg-dark transition-all hover:scale-105">
-                    Contact Me
+                <section id="contact" class="mb-32 scroll-mt-24">
+                    <div
+                        class="bg-gradient-to-br from-primary to-dark rounded-3xl p-12 text-center text-card-bg shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                            <div class="bear-decoration text-9xl -top-10 -left-10 rotate-12">🧸</div>
+                            <div class="bear-decoration text-9xl -bottom-10 -right-10 -rotate-12">🧸</div>
+                        </div>
+
+                        <h2 class="text-4xl font-bold mb-6 title-font">Get In Touch</h2>
+                        <p class="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
+                            制作のご依頼やご相談、その他何かありましたら、<br class="hidden md:block">SNSのDM等からお気軽にご連絡ください。
+                        </p>
+
+                        <div class="flex flex-wrap justify-center gap-6 relative z-10">
+                            <a href="https://twitter.com/Veronica_kuma" target="_blank" rel="noopener noreferrer"
+                                class="px-8 py-4 bg-card-bg text-dark rounded-full font-bold hover:bg-accent-pink transition-all hover:scale-105 shadow-xl">
+                                X (Twitter) で連絡する
+                            </a>
+                            <a href="https://lipscosme.com/members/veronica_kuma" target="_blank"
+                                rel="noopener noreferrer"
+                                class="px-8 py-4 bg-transparent border-2 border-card-bg text-card-bg rounded-full font-bold hover:bg-card-bg hover:text-dark transition-all hover:scale-105 shadow-xl">
+                                LIPSを見る
+                            </a>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-card-bg py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-3xl font-bold mb-6 title-font">Veronica</div>
+            <p class="mb-8 opacity-70">デザインと開発で、もっと自由で楽しい毎日を。</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <!-- X Icon -->
+                <a href="https://twitter.com/Veronica_kuma" target="_blank" aria-label="X (Twitter)">
+                    <svg class="w-6 h-6 fill-current hover:text-accent-pink transition-colors" viewBox="0 0 24 24">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+                <!-- LIPS Icon Placeholder -->
+                <a href="https://lipscosme.com/members/veronica_kuma" target="_blank" aria-label="LIPS">
+                    <span class="text-xl hover:scale-110 transition-transform inline-block">💄</span>
                 </a>
             </div>
-        </section>
+            <p class="text-sm opacity-50">&copy; 2024 Veronica. Crafted with 💜 and Care.</p>
+        </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer class="text-center text-text-main py-8 border-t-2 border-primary/20">
-            <p class="flex items-center justify-center gap-2">
-                © 2024 Veronica. Made with 
-                <span class="text-accent-pink">💜</span>
-            </p>
-        </footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 p-4 bg-primary text-white rounded-full shadow-2xl opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:bg-dark hover:-translate-y-1"
+        aria-label="トップに戻る">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
     </div>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.j
