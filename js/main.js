@@ -1,42 +1,15 @@
-// Tailwind Configuration
-// Note: Define tailwind.config globally so the CDN script can pick it up
-window.tailwind = window.tailwind || {};
-window.tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                'bg-main': '#F8EBDD',
-                'card-bg': '#FFF9F4',
-                'primary': '#A47148',
-                'dark': '#5C4033',
-                'accent-pink': '#F7C6C7',
-                'accent-purple': '#E6B8E8',
-                'accent-yellow': '#F4C430',
-                'text-main': '#6E5C4F',
-            }
-        }
-    }
-};
-
 // Navigation and Scroll Effects
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     const backToTop = document.getElementById('back-to-top');
     let lastScrollY = window.scrollY;
 
-    // Ensure initial visibility if Observer fails
-    const revealAll = () => {
-        document.querySelectorAll('section, header, footer').forEach(el => {
-            el.style.opacity = '1';
-        });
-    };
-
-    // Scroll events
+    // Navigation and Scroll logic
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
 
         if (nav) {
-            // Scroll behavior for navigation
+            // Shadow on scroll
             if (currentScrollY > 50) {
                 nav.classList.add('shadow-lg', 'py-2');
                 nav.classList.remove('py-4');
@@ -45,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nav.classList.add('py-4');
             }
 
+            // Hide/Show on scroll direction
             if (currentScrollY > lastScrollY && currentScrollY > 500) {
                 nav.style.transform = 'translateY(-100%)';
             } else {
@@ -55,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backToTop) {
             // Back to Top button visibility
             if (currentScrollY > 800) {
-                backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTop.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
             } else {
-                backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTop.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
             }
         }
 
@@ -71,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Intersection Observer for Scroll Reveal
+    // --- Intersection Observer for Scroll Reveal ---
+    // Instead of hiding with JS (which can fail), we rely on CSS classes for initial state
+    // but here we just ensure consistency.
     if ('IntersectionObserver' in window) {
         const observerOptions = {
             threshold: 0.1
@@ -89,15 +65,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('section, header, footer').forEach(el => {
             if (!el.classList.contains('no-reveal')) {
-                el.style.opacity = '0';
-                el.style.transition = 'opacity 0.8s ease-out';
-                observer.observe(el);
+                // Ensure visibility is managed by the fade-in-up class or just keep it visible
+                // For safety, we only set opacity: 0 if it's NOT already in view
+                const rect = el.getBoundingClientRect();
+                const isInView = (rect.top <= window.innerHeight && rect.bottom >= 0);
+
+                if (!isInView) {
+                    el.style.opacity = '0';
+                    el.style.transition = 'opacity 0.8s ease-out';
+                    observer.observe(el);
+                } else {
+                    el.style.opacity = '1';
+                }
             }
         });
-
-        // Fallback: If nothing reveals after 2 seconds, reveal everything
-        setTimeout(revealAll, 2000);
     } else {
-        revealAll();
+        // Fallback for older browsers
+        document.querySelectorAll('section, header, footer').forEach(el => {
+            el.style.opacity = '1';
+        });
     }
 });

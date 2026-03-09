@@ -21,9 +21,27 @@
     <meta property="twitter:title" content="Veronica - Portfolio">
     <meta property="twitter:description" content="デザインと開発でユーザーに寄り添うものづくりを。Veronicaの活動を紹介します。">
     <meta property="twitter:image" content="https://veronica-kuma.example.com/photo/og-image.jpg">
-    <script src="js/main.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-main': '#F8EBDD',
+                        'card-bg': '#FFF9F4',
+                        'primary': '#A47148',
+                        'dark': '#5C4033',
+                        'accent-pink': '#F7C6C7',
+                        'accent-purple': '#E6B8E8',
+                        'accent-yellow': '#F4C430',
+                        'text-main': '#6E5C4F',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body class="bg-bg-main">
