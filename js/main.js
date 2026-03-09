@@ -1,5 +1,7 @@
 // Tailwind Configuration
-tailwind.config = {
+// Note: Define tailwind.config globally so the CDN script can pick it up
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
     theme: {
         extend: {
             colors: {
@@ -14,13 +16,20 @@ tailwind.config = {
             }
         }
     }
-}
+};
 
 // Navigation and Scroll Effects
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     const backToTop = document.getElementById('back-to-top');
     let lastScrollY = window.scrollY;
+
+    // Ensure initial visibility if Observer fails
+    const revealAll = () => {
+        document.querySelectorAll('section, header, footer').forEach(el => {
+            el.style.opacity = '1';
+        });
+    };
 
     // Scroll events
     window.addEventListener('scroll', () => {
@@ -56,30 +65,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (backToTop) {
-        backToTop.addEventListener('click', () => {
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
     // Intersection Observer for Scroll Reveal
-    const observerOptions = {
-        threshold: 0.1
-    };
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                entry.target.style.opacity = '1';
-                observer.unobserve(entry.target);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, header, footer').forEach(el => {
+            if (!el.classList.contains('no-reveal')) {
+                el.style.opacity = '0';
+                el.style.transition = 'opacity 0.8s ease-out';
+                observer.observe(el);
             }
         });
-    }, observerOptions);
 
-    document.querySelectorAll('section, header, footer').forEach(el => {
-        if (!el.classList.contains('no-reveal')) {
-            el.style.opacity = '0';
-            observer.observe(el);
-        }
-    });
+        // Fallback: If nothing reveals after 2 seconds, reveal everything
+        setTimeout(revealAll, 2000);
+    } else {
+        revealAll();
+    }
 });
