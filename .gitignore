@@ -17,6 +17,3 @@ tmp/
 temp/
 *.log
 
-# Git specific (Optional: hide internal task files if they were inside project)
-# task.md
-# implementation_plan.md
