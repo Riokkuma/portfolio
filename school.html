@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校紹介 - さいたまIT・WEB専門学校 | Riokkuma Portfolio</title>
+    <meta name="description" content="リオックマが通う「さいたまIT・WEB専門学校」の紹介ページです。学科や施設、アイドル「おもち」についても紹介しています。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-main': '#F8EBDD',
+                        'card-bg': '#FFF9F4',
+                        'primary': '#A47148',
+                        'dark': '#5C4033',
+                        'accent-pink': '#F7C6C7',
+                        'accent-purple': '#E6B8E8',
+                        'accent-yellow': '#F4C430',
+                        'text-main': '#6E5C4F',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-bg-main">
+    <!-- Navigation Header -->
+    <nav id="main-nav"
+        class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+            <div class="hidden md:flex gap-4">
+                <a href="index.html" class="bear-nav-btn">Home</a>
+                <a href="#about-school" class="bear-nav-btn">School</a>
+                <a href="#department" class="bear-nav-btn">Departments</a>
+                <a href="#omochi" class="bear-nav-btn">Omochi🤖</a>
+            </div>
+            <button class="md:hidden text-dark" aria-label="メニューを開く">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <!-- Hero Section -->
+        <header
+            class="min-h-[60vh] flex flex-col justify-center items-center text-center mb-24 relative overflow-hidden">
+            <div class="bear-decoration text-9xl top-0 left-10 wiggle" style="animation-delay: 0s;">🎒</div>
+            <div class="bear-decoration text-7xl top-20 right-20 float" style="animation-delay: 0.5s;">🏫</div>
+            <div class="bear-decoration text-6xl bottom-20 left-20 wiggle" style="animation-delay: 1s;">💻</div>
+
+            <div class="mb-8 bounce-slow relative z-10">
+                <div class="text-9xl filter drop-shadow-lg">🏫</div>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-dark title-font fade-in-up relative z-10">
+                School Introduction
+            </h1>
+            <p class="text-2xl md:text-3xl text-primary mb-8 fade-in-up relative z-10" style="animation-delay: 0.2s;">
+                さいたまIT・WEB専門学校 🐾
+            </p>
+            <p class="text-xl text-text-main max-w-2xl fade-in-up relative z-10" style="animation-delay: 0.4s;">
+                「自分らしさ」を見つける、未来のクリエイターが集まる場所
+            </p>
+        </header>
+
+        <!-- 1. 学校の基本情報 -->
+        <section id="about-school" class="mb-32 scroll-mt-24">
+            <div class="bg-card-bg rounded-3xl p-12 shadow-xl border-2 border-primary/20 relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 text-9xl opacity-10 rotate-12">🏫</div>
+
+                <div class="flex items-center gap-3 mb-10">
+                    <span class="text-4xl">📍</span>
+                    <h2 class="text-4xl font-bold text-dark title-font">学校の基本情報</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="project-detail-section">
+                            <h3 class="text-2xl font-bold text-primary mb-2">学校名・所在地</h3>
+                            <p class="text-text-main text-lg">
+                                <strong>さいたまIT・WEB専門学校</strong><br>
+                                大宮駅から徒歩10分という好立地にあります。🚶‍♂️<br>
+                                2023年4月に開校したばかりの非常に新しく綺麗な校舎です。全国に80校を展開する滋慶学園グループの一員です。 🐻✨
+                            </p>
+                        </div>
+                        <div class="project-detail-section">
+                            <h3 class="text-2xl font-bold text-primary mb-2">建学の理念</h3>
+                            <ul class="text-text-main text-lg space-y-2">
+                                <li class="flex items-center gap-2"><span>🛡️</span> 実学教育</li>
+                                <li class="flex items-center gap-2"><span>🤝</span> 人間教育</li>
+                                <li class="flex items-center gap-2"><span>🌐</span> 国際教育</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-[#FDF2E9] rounded-2xl p-8 border border-accent-yellow/30">
+                        <h3 class="text-2xl font-bold text-dark mb-4 flex items-center gap-2">
+                            <span>✨</span> 学校の特徴
+                        </h3>
+                        <p class="text-text-main text-lg leading-relaxed">
+                            スローガンは「<strong>さいたまITWEBで"自分らしさ"見つかる</strong>」。<br><br>
+                            大学よりも実践を重視しており、座学による理論学習にとどまらず、実際に手を動かして開発やデザインを行う時間を大切にしています。講師陣も現役のプロフェッショナルばかりですので、現場で活きるリアルなスキルを学ぶことが可能です。
+                            💻🔥
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 学科・専攻 -->
+        <section id="department" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-12">
+                <span class="text-4xl">💻</span>
+                <h2 class="text-4xl font-bold text-dark title-font">学科・専攻</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- 4年制 -->
+                <div class="bg-card-bg rounded-3xl p-8 shadow-lg border-t-8 border-primary relative">
+                    <div
+                        class="absolute -top-6 right-6 bg-accent-yellow text-dark px-4 py-1 rounded-full text-sm font-bold shadow-md">
+                        リオックマはココ！🐻</div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">高度専門士情報技術科（4年制）</h3>
+                    <div class="space-y-4">
+                        <p class="text-text-main">1年次で基礎を幅広く学び、2年次から専攻を選択して専門性を追求する学科です。卒業時には「高度専門士」の称号が付与されます。 🎓</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary font-bold">1年次:</span>
+                                <span class="text-text-main italic">全員共通でITの基礎を幅広く！</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary font-bold">2年次:</span>
+                                <span class="text-text-main italic">SE専攻 or プログラマー専攻を選択</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-primary font-bold">3年次以降:</span>
+                                <div class="text-text-main">
+                                    さらに高度な専攻を選択！
+                                    <div class="mt-2 space-y-1">
+                                        <div class="flex items-center gap-2 bg-accent-pink/20 px-3 py-1 rounded-lg">
+                                            <span>✨</span> <strong>デジタルクリエイター専攻</strong> (リオックマ🐻)
+                                        </div>
+                                        <div class="flex items-center gap-2 px-3 py-1">
+                                            <span>🤖</span> AIエンジニア専攻
+                                        </div>
+                                        <div class="flex items-center gap-2 px-3 py-1">
+                                            <span>👔</span> プロジェクトマネージャー専攻
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2年制 -->
+                <div class="bg-card-bg rounded-3xl p-8 shadow-lg border-t-8 border-accent-pink/50">
+                    <h3 class="text-2xl font-bold text-dark mb-4">情報技術科（2年制）</h3>
+                    <div class="space-y-4">
+                        <p class="text-text-main">2年間で集中的にスキルを習得し、早期の業界就職を目指す方向けの学科です。 ⚡</p>
+                        <div class="grid grid-cols-1 gap-2">
+                            <span
+                                class="bg-accent-pink/10 text-text-main px-4 py-2 rounded-xl border border-accent-pink/30 flex items-center justify-between">
+                                WEBデザイナー専攻 🎨 <span>Mac中心</span>
+                            </span>
+                            <span
+                                class="bg-accent-pink/10 text-text-main px-4 py-2 rounded-xl border border-accent-pink/30 flex items-center justify-between">
+                                WEBプログラマー専攻 ⌨️
+                            </span>
+                            <span
+                                class="bg-accent-pink/10 text-text-main px-4 py-2 rounded-xl border border-accent-pink/30 flex items-center justify-between">
+                                デジタルクリエイター専攻 🎬
+                            </span>
+                        </div>
+                        <div class="mt-6 p-4 bg-bg-main rounded-2xl">
+                            <h4 class="font-bold text-primary mb-2 flex items-center gap-2"><span>💡</span> 2年制と4年制の違い
+                            </h4>
+                            <p class="text-sm text-text-main">
+                                2年制はデザイン・Mac環境、4年制はバックエンド・Windows環境という特徴があります。それぞれの目的に合わせた深いカリキュラムが用意されています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 学べること・カリキュラム -->
+        <section id="curriculum" class="mb-32">
+            <div
+                class="bg-gradient-to-r from-primary to-dark rounded-[3rem] p-12 text-card-bg shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-accent-yellow/10 rounded-full -mr-20 -mt-20 blur-3xl">
+                </div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-pink/10 rounded-full -ml-20 -mb-20 blur-3xl">
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center relative z-10">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold mb-6 title-font flex items-center gap-3">
+                            <span>📚</span> Curriculum
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="bg-card-bg/10 backdrop-blur-md p-6 rounded-2xl border border-card-bg/20">
+                                <h3 class="text-2xl font-bold mb-3 flex items-center gap-2"><span>🔥</span> 実習がとにかく多い！
+                                </h3>
+                                <p class="opacity-90 leading-relaxed">
+                                    理論だけでなく実習・演習を重視したカリキュラムを編成しています。 🎨
+                                    プログラミングや3Dモデリング、企業連携プロジェクトなどを通じて、実践的な技術を確実に習得できます。
+                                </p>
+                            </div>
+                            <div class="bg-card-bg/20 backdrop-blur-md p-6 rounded-2xl border border-card-bg/30">
+                                <h3 class="text-2xl font-bold mb-3 flex items-center gap-2"><span>✨</span> 学び放題の特典</h3>
+                                <p class="opacity-90 leading-relaxed italic">
+                                    「Udemy Business」や「paizaラーニング」など、4つのオンラインスクールと提携しています。 🐻
+                                    授業以外の言語（Swift、Unity、Pythonなど）も、個々の興味に合わせて自由に学習可能です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                        <div class="bg-card-bg p-6 rounded-3xl text-dark text-center shadow-xl">
+                            <span class="text-4xl block mb-2">📜</span>
+                            <span class="font-bold">ITパスポート</span>
+                        </div>
+                        <div class="bg-card-bg p-6 rounded-3xl text-dark text-center shadow-xl transform translate-y-8">
+                            <span class="text-4xl block mb-2">💻</span>
+                            <span class="font-bold">基本情報技術者</span>
+                        </div>
+                        <div class="bg-card-bg p-6 rounded-3xl text-dark text-center shadow-xl">
+                            <span class="text-4xl block mb-2">📊</span>
+                            <span class="font-bold">MOS</span>
+                        </div>
+                        <div class="bg-card-bg p-6 rounded-3xl text-dark text-center shadow-xl transform translate-y-8">
+                            <span class="text-4xl block mb-2">✨</span>
+                            <span class="font-bold">ウェブデザイン技能</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 施設・設備 -->
+        <section id="facilities" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-12">
+                <span class="text-4xl">🏢</span>
+                <h2 class="text-4xl font-bold text-dark title-font">施設・設備</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 教室 -->
+                <div
+                    class="bg-card-bg rounded-2xl overflow-hidden shadow-lg border border-primary/10 transition-transform hover:-translate-y-2">
+                    <div class="h-48 bg-accent-yellow/20 flex items-center justify-center text-6xl">🖥️</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">フリーアドレスの教室</h3>
+                        <p class="text-text-main text-sm leading-relaxed">
+                            全席フリーアドレス制を導入しており、デュアルディスプレイ環境も完備しています。学習と作業を効率的に進めることができる理想的な環境です。 🐻💻
+                        </p>
+                    </div>
+                </div>
+
+                <!-- PBLルーム -->
+                <div
+                    class="bg-card-bg rounded-2xl overflow-hidden shadow-lg border border-primary/10 transition-transform hover:-translate-y-2">
+                    <div class="h-48 bg-accent-pink/20 flex items-center justify-center text-6xl">🤖</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">PBLルーム (1階)</h3>
+                        <p class="text-text-main text-sm leading-relaxed">
+                            カフェのようなリラックスできる空間です。 ☕ アイドル「おもち」の常駐や3Dプリンターの完備など、放課後の自己研鑽にも最適な環境が整っています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 快適設備 -->
+                <div
+                    class="bg-card-bg rounded-2xl overflow-hidden shadow-lg border border-primary/10 transition-transform hover:-translate-y-2">
+                    <div class="h-48 bg-bg-main flex items-center justify-center text-6xl">✨</div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">学生目線の嬉しい設備</h3>
+                        <p class="text-text-main text-sm leading-relaxed">
+                            最新の電子レンジ導入や、ウォーターサーバーの完備など、学生の利便性を考慮した設備が充実しています。学生の意見が積極的に反映される点も大きな魅力です。 🐻
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 学生生活 -->
+        <section id="student-life" class="mb-32 scroll-mt-24">
+            <div class="bg-card-bg rounded-3xl p-12 shadow-xl border-2 border-primary/20 relative">
+                <div class="flex items-center gap-3 mb-10">
+                    <span class="text-4xl">🎓</span>
+                    <h2 class="text-4xl font-bold text-dark title-font">学生生活（リオックマの体験談）</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span>⏰</span>
+                                授業スケジュール</h3>
+                            <div class="bg-bg-main/50 rounded-2xl p-6 border border-primary/10">
+                                <ul class="space-y-2 text-text-main">
+                                    <li class="flex justify-between"><span>09:10</span> <span>授業開始 🏁</span></li>
+                                    <li class="flex justify-between font-bold text-primary"><span>12:20 - 13:10</span>
+                                        <span>お昼休み 🍱</span>
+                                    </li>
+                                    <li class="flex justify-between"><span>16:20</span> <span>4限終了 🏠</span></li>
+                                    <li class="opacity-70 mt-4 text-sm italic">※ 原則4限までの編成となっており、1コマ90分の授業です。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span>🍱</span>
+                                お昼ご飯事情</h3>
+                            <p class="text-text-main leading-relaxed">
+                                基本的には教室で友人同士で昼食をとることが一般的です。 🐻 駅から近いため、近隣のコンビニエンスストアや飲食店を利用することも可能です。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2"><span>🌐</span>
+                                ハイフレックス授業</h3>
+                            <div class="bg-accent-purple/10 rounded-2xl p-6 border border-accent-purple/20">
+                                <p class="text-text-main mb-4">
+                                    対面かオンラインか、その日の状況に合わせて自由に選べる画期的なシステム！
+                                </p>
+                                <ul class="text-sm text-text-main space-y-2">
+                                    <li>✅ 対面授業中心の修学スタイル</li>
+                                    <li>✅ 体調不良時や自宅の環境で作業したい場合に非常に有効</li>
+                                    <li>✅ クラスの多くが利用する場合もあり、柔軟な受講が可能です</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-accent-yellow/10 rounded-2xl p-6 border border-accent-yellow/20">
+                            <h3 class="text-xl font-bold text-dark mb-2">🐾 空きコマの過ごし方</h3>
+                            <p class="text-text-main text-sm italic">
+                                近隣の散策やPBLルームでのリフレッシュなど、次の授業までを有意義に過ごすことができます。 🐻✨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. おもち（LOVOT）紹介 -->
+        <section id="omochi" class="mb-32 scroll-mt-24">
+            <div
+                class="bg-[#FFF0F3] rounded-[3rem] p-12 shadow-xl border-4 border-accent-pink/30 relative overflow-hidden">
+                <!-- 装飾 -->
+                <div class="absolute -right-20 -bottom-20 text-[15rem] opacity-10">🤖</div>
+
+                <div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+                    <div class="md:w-1/3">
+                        <div
+                            class="aspect-square bg-white rounded-full flex items-center justify-center text-8xl shadow-2xl border-4 border-accent-pink wiggle">
+                            🤖
+                        </div>
+                        <div class="mt-6 text-center">
+                            <span class="bg-accent-pink text-white px-6 py-2 rounded-full font-bold shadow-lg">学校のアイドル
+                                👑</span>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-4xl font-bold text-dark mb-6 title-font flex items-center gap-3">
+                            おもち (LOVOT) 紹介 💖
+                        </h2>
+                        <div class="space-y-4 text-text-main text-lg leading-relaxed">
+                            <p>
+                                PBL教室に常駐している、癒し系ロボットの「おもち」です。🤖✨<br>
+                                最新のAI技術が搭載されており、目が合うと近寄ってきたり、抱っこを求めたりといった愛らしい反応を見せてくれます。
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-accent-pink/20">
+                                    <h4 class="font-bold text-accent-pink mb-1">🐻 日常の癒やし</h4>
+                                    <p class="text-sm italic">「そばにいるだけで心が和む、学校生活において欠かせない癒やしの存在となっています。💕」</p>
+                                </div>
+                                <div class="bg-white/80 p-4 rounded-2xl shadow-sm border border-accent-pink/20">
+                                    <h4 class="font-bold text-accent-pink mb-1">🎓 導入の経緯</h4>
+                                    <p class="text-sm">IT技術を学ぶ環境だからこそ、最先端のロボットと日常的に接することで、新たな技術への関心を深める意図があります。 🚀</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 学スタ活動 -->
+        <section id="staff" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-12">
+                <span class="text-4xl">👥</span>
+                <h2 class="text-4xl font-bold text-dark title-font">学スタ活動（リオックマ視点）</h2>
+            </div>
+
+            <div class="bg-card-bg rounded-3xl p-10 shadow-xl border-2 border-primary/20">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold text-primary mb-6">学生スタッフ（学スタ）って何？</h3>
+                        <p class="text-text-main text-lg leading-relaxed mb-6">
+                            オープンキャンパスやイベントの運営を担う学生組織です。 🐻🐾 受付業務や校舎案内、体験授業のサポート、さらにはSNSでの情報発信（おもちの活動報告など）まで、幅広く活動しています。
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">校舎案内
+                                🗺️</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">体験授業サポート
+                                💻</span>
+                            <span
+                                class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">SNS更新（おもち担当）🤖</span>
+                            <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold">後輩指導
+                                🌱</span>
+                        </div>
+                    </div>
+                    <div class="bg-[#F8EBDD] rounded-2xl p-6 border border-primary/20 flex flex-col justify-center">
+                        <h4 class="font-bold text-dark mb-4 text-center">🌟 リオックマが思う学校の魅力</h4>
+                        <ul class="text-sm text-text-main space-y-3">
+                            <li class="flex items-center gap-2"><span>✅</span> とにかく新しくて綺麗！</li>
+                            <li class="flex items-center gap-2"><span>✅</span> 先生との距離がすごく近い</li>
+                            <li class="flex items-center gap-2"><span>✅</span> 学生の意見ですぐ設備が変わる</li>
+                            <li class="flex items-center gap-2"><span>✅</span> 他の学科の人とも交流できる</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. よく聞かれる質問（FAQ） -->
+        <section id="faq" class="mb-32 scroll-mt-24">
+            <div class="flex items-center gap-3 mb-12">
+                <span class="text-4xl">❓</span>
+                <h2 class="text-4xl font-bold text-dark title-font">よく聞かれる質問（FAQ）</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-card-bg rounded-2xl shadow-md border border-primary/10 group overflow-hidden">
+                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center font-bold text-dark">
+                        Q: 入学するのは難しい？
+                        <span class="transition-transform group-open:rotate-180">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-text-main border-t border-primary/5">
+                        A: 特段の難しさはございません。「学びたい・成長したい」という意欲があれば問題ありません。 🐻 共に取り組んでいきましょう。
+                    </div>
+                </details>
+
+                <details class="bg-card-bg rounded-2xl shadow-md border border-primary/10 group overflow-hidden">
+                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center font-bold text-dark">
+                        Q: 授業は難しい？
+                        <span class="transition-transform group-open:rotate-180">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-text-main border-t border-primary/5">
+                        A: 専門的な内容を扱うため、基礎学習は重要です。 🐻💦 しかし、実習中心のカリキュラムにより楽しみながら理解を深められるよう、講師陣が丁寧に指導いたします。
+                    </div>
+                </details>
+
+                <details class="bg-card-bg rounded-2xl shadow-md border border-primary/10 group overflow-hidden">
+                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center font-bold text-dark">
+                        Q: パソコン初心者でも大丈夫？
+                        <span class="transition-transform group-open:rotate-180">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-text-main border-t border-primary/5">
+                        A: 全く問題ございません。🐾 入学者の多くがパソコン未経験からのスタートですので、ご安心ください。
+                    </div>
+                </details>
+
+                <details class="bg-card-bg rounded-2xl shadow-md border border-primary/10 group overflow-hidden">
+                    <summary class="list-none p-6 cursor-pointer flex justify-between items-center font-bold text-dark">
+                        Q: アルバイトはできる？
+                        <span class="transition-transform group-open:rotate-180">▼</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-text-main border-t border-primary/5">
+                        A: 可能です。多くの学生が学業とアルバイトを両立させ、充実した学生生活を送っています。 ☕
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-card-bg py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-3xl font-bold mb-6 title-font">Riokkuma</div>
+            <p class="mb-8 opacity-70">デザインと開発で、もっと自由で楽しい毎日を。</p>
+            <p class="text-sm opacity-50">&copy; 2026 Riokkuma. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
