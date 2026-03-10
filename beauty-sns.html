@@ -30,9 +30,18 @@
 
 <body class="bg-bg-main text-text-main">
   <nav id="main-nav"
-    class="fixed top-0 left-0 w-full z-50 bg-bg-main/80 backdrop-blur-md border-b border-primary/10 transition-transform duration-300 no-reveal">
+    class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+        <a href="index.html"
+          class="hidden sm:inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-dark transition-colors border-l-2 border-primary/20 pl-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Home
+        </a>
+      </div>
       <div class="hidden md:flex gap-4">
         <a href="index.html#about" class="bear-nav-btn">About</a>
         <a href="index.html#qualifications" class="bear-nav-btn">Qualifications</a>
