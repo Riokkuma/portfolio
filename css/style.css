@@ -156,7 +156,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 🐻 クマ型ナビゲーションボタン */
+/* 🐻 クマ型ボタン（共通） */
+.bear-btn,
 .bear-nav-btn {
     position: relative;
     padding: 0.5rem 1.25rem;
@@ -166,13 +167,14 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #6E5C4F;
-    /* text-main */
     font-weight: 500;
     text-decoration: none;
+    z-index: 10;
 }
 
 /* 耳（共通設定） */
+.bear-btn::before,
+.bear-btn::after,
 .bear-nav-btn::before,
 .bear-nav-btn::after {
     content: '';
@@ -188,36 +190,73 @@ html {
     opacity: 0;
 }
 
+.bear-btn::before,
 .bear-nav-btn::before {
-    left: 8px;
+    left: 15%;
     transform: rotate(-15deg);
 }
 
+.bear-btn::after,
 .bear-nav-btn::after {
-    right: 8px;
+    right: 15%;
     transform: rotate(15deg);
 }
 
 /* ホバー時の耳の動きと色 */
+.bear-btn:hover,
 .bear-nav-btn:hover {
+    transform: translateY(-2px);
+    color: #FFF9F4;
+    /* card-bg */
+}
+
+/* ナビゲーションボタン固有の色（背景が薄い場合用） */
+.bear-nav-btn {
+    color: #6E5C4F;
+    /* text-main */
+}
+
+/* 茶色のボタン（プロジェクト詳細など） */
+.bear-btn-primary {
     background-color: #A47148;
     /* primary */
     color: #FFF9F4;
     /* card-bg */
-    transform: translateY(-2px);
 }
 
+.bear-btn:hover::before,
+.bear-btn:hover::after,
 .bear-nav-btn:hover::before,
 .bear-nav-btn:hover::after {
     opacity: 1;
     top: -8px;
     background-color: #A47148;
+    /* primary */
 }
 
+/* 茶色ボタンホバー時の耳の色調整 */
+.bear-btn-primary:hover::before,
+.bear-btn-primary:hover::after {
+    background-color: #5C4033;
+    /* dark */
+}
+
+.bear-btn-primary:hover {
+    background-color: #5C4033;
+    /* dark */
+}
+
+/* ナビボタンホバー時の背景色 */
+.bear-nav-btn:hover {
+    background-color: #A47148;
+}
+
+.bear-btn:hover::before,
 .bear-nav-btn:hover::before {
     transform: translateX(-4px) rotate(-25deg);
 }
 
+.bear-btn:hover::after,
 .bear-nav-btn:hover::after {
     transform: translateX(4px) rotate(25deg);
 }
