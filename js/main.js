@@ -2,7 +2,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     const backToTop = document.getElementById('back-to-top');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     let lastScrollY = window.scrollY;
+
+    // Mobile Menu Logic
+    if (mobileMenuBtn && mobileMenu) {
+        // メニューを開く
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('menu-open');
+            document.body.style.overflow = 'hidden'; // 背面のスクロール防止
+        });
+
+        // メニューを閉じる
+        const closeMenu = () => {
+            mobileMenu.classList.remove('menu-open');
+            document.body.style.overflow = ''; // スクロール再開
+        };
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMenu);
+        }
+
+        // リンクをクリックしたらメニューを閉じる
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    }
 
     // Navigation and Scroll logic
     window.addEventListener('scroll', () => {
