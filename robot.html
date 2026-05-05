@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>半自動メイクブラシ洗浄ロボット | Riokkuma Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-main': '#F8EBDD',
+            'card-bg': '#FFF9F4',
+            'primary': '#A47148',
+            'dark': '#5C4033',
+            'accent-pink': '#F7C6C7',
+            'accent-yellow': '#F4C430',
+            'text-main': '#6E5C4F',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-bg-main text-text-main">
+  <nav id="main-nav"
+    class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+        <a href="index.html"
+          class="hidden sm:inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-dark transition-colors border-l-2 border-primary/20 pl-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Home
+        </a>
+      </div>
+      <div class="hidden md:flex gap-2 lg:gap-4 items-center">
+        <a href="index.html#about" class="bear-nav-btn text-sm lg:text-base px-2">About</a>
+        <a href="index.html#qualifications" class="bear-nav-btn text-sm lg:text-base px-2">Qualifications</a>
+        <a href="index.html" class="bear-nav-btn text-sm lg:text-base px-2">Home</a>
+        <a href="school.html" class="bear-nav-btn text-sm lg:text-base px-2">School</a>
+        <a href="foreign-internship.html" class="bear-nav-btn text-sm lg:text-base px-2">Activities</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-dark p-2 hover:bg-primary/10 rounded-full transition-colors" aria-label="メニューを開く">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 📱 スマホ用ハンバーガーメニュー画面 -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#FFF9F4]/95 backdrop-blur-sm opacity-0 invisible flex flex-col justify-center items-center">
+      <!-- 閉じるボタン -->
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-dark p-3 hover:bg-primary/10 rounded-full transition-colors bg-[#EEDCC6] shadow-md border border-primary/20" aria-label="メニューを閉じる">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+
+      <!-- メニュー画面のクマ装飾 -->
+      <div class="absolute top-10 left-10 text-6xl bear-decoration float">🧸</div>
+      <div class="absolute bottom-10 right-10 text-7xl bear-decoration wiggle">🐻</div>
+      <div class="absolute bottom-20 left-20 text-5xl bear-decoration float" style="animation-delay: 1s;">🐾</div>
+
+      <!-- ナビゲーションリンク -->
+      <nav class="flex flex-col gap-8 text-center menu-content">
+          <a href="index.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3 border-b-2 border-primary/30 pb-2">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Home
+          </a>
+          <a href="index.html#about" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> About
+          </a>
+          <a href="index.html#qualifications" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Qualifications
+          </a>
+          <a href="school.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> School
+          </a>
+          <a href="beauty-sns.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Beauty
+          </a>
+          <a href="foreign-internship.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Activities 🐾
+          </a>
+      </nav>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6 py-24">
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    📝 プロジェクトタイトル
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <h1 class="text-4xl font-bold text-dark mb-4">半自動メイクブラシ洗浄ロボット 🤖</h1>
+    <p class="text-lg text-text-main mb-8">3Dプリント洗濯板プレートによる物理洗浄</p>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    🏷️ 使用技術タグ
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <div class="flex flex-wrap gap-2 mb-12">
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">3Dプリント</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">CAD (Onshape)</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Raspberry Pi</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">Python</span>
+      <span class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">ロボティクス</span>
+    </div>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    🖼️ メイン画像
+    ✏️ ここに画像を追加：photo/robot-main.jpg
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <div class="mb-12 text-center">
+      <img src="photo/robot-main.jpg" alt="半自動メイクブラシ洗浄ロボット"
+        class="max-w-md w-full h-auto rounded-3xl shadow-lg mx-auto">
+    </div>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    📋 プロジェクト概要
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>📋</span> プロジェクト概要
+      </h2>
+      <p class="text-text-main leading-relaxed mb-4">
+        メイクブラシの洗浄を自動化し、衛生的に保つための半自動ロボットを開発しました。
+        3Dプリントで作成した凹凸プレート（洗濯板）により、物理的にブラシをこすって洗浄する本当の洗浄方式を実現。
+      </p>
+      <p class="text-text-main leading-relaxed">
+        初期案では洗浄力が不足していましたが、複数回の改良を重ね、外周ツメでの回転防止や複数種類の凸による内部洗浄を可能にしました。
+        CADで一から作ったクマのデザインをチャームポイントとして配置しています。🐾
+      </p>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    🎯 開発プロセス
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-dark mb-8 flex items-center gap-2">
+        <span>🎯</span> 開発プロセス
+      </h2>
+
+      <!-- プラン1：課題認識と初期アイデア -->
+      <div class="mb-8 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+        <h3 class="text-xl font-bold text-primary mb-4">プラン-1：課題認識と初期アイデア</h3>
+
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-dark mb-2">1. 課題認識</h4>
+            <p class="text-text-main">メイクブラシ洗浄は手間 → 自動化で効率化</p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-dark mb-2">2. 初期アイデア</h4>
+            <p class="text-text-main mb-2">コップ上でブラシをふるだけ</p>
+            <p class="text-red-600">→ 洗浄力が弱い（自分の手で）</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- プラン2：試作と改良 -->
+      <div class="mb-8 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+        <h3 class="text-xl font-bold text-primary mb-4">プラン-2：試作と改良</h3>
+
+        <!-- 
+        ✏️ 画像挿入エリア：3Dプリントプレート
+        photo/plate-before.jpg と photo/plate-after.jpg を配置
+        -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="rounded-xl overflow-hidden shadow-md">
+            <img src="photo/plate-before.jpg" alt="初期プレート" class="w-full h-auto object-cover aspect-square">
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-md">
+            <img src="photo/plate-after.jpg" alt="改良後プレート" class="w-full h-auto object-cover aspect-square">
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <h4 class="font-bold text-dark mb-2">3. 試作</h4>
+            <ul class="list-disc list-inside space-y-1 text-text-main">
+              <li>3Dプリントの凹凸プレートを追加</li>
+              <li>毛束の開き・洗浄効果向上（自分の手で）</li>
+              <li class="text-red-600">板が回る問題を発見</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-dark mb-2">4. 改良策</h4>
+            <ul class="list-disc list-inside space-y-1 text-text-main">
+              <li class="text-green-600">外周ツメで回転防止</li>
+              <li class="text-green-600">上下往復で洗浄しやすい形状にした</li>
+              <li class="text-green-600">凸の種類を増やし筆の内部まで洗浄できるようにした</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- チャームポイント -->
+      <div
+        class="bg-gradient-to-br from-accent-pink/20 to-accent-yellow/20 rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+        <h3 class="text-xl font-bold text-primary mb-4 flex items-center gap-2">
+          <span>✨</span> チャームポイント
+        </h3>
+
+        <!-- 
+        ✏️ 画像挿入エリア：CADのクマデザイン
+        photo/bear-cad.jpg を配置
+        -->
+        <div class="grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <img src="photo/bear-cad.jpg" alt="CADで作ったクマ" class="rounded-xl shadow-md w-full h-auto object-cover">
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-4xl">🐻</span>
+              <div>
+                <h4 class="font-bold text-dark">CADで一から作ったクマをあしらう</h4>
+                <p class="text-sm text-text-main">オリジナルデザインで個性をアピール</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-4xl">🔧</span>
+              <div>
+                <h4 class="font-bold text-dark">ツメを作って回転しづらくした</h4>
+                <p class="text-sm text-text-main">機能性とデザイン性を両立</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    📊 市場調査
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>📊</span> 市場調査
+      </h2>
+
+      <div class="mb-6">
+        <h3 class="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+          <span>🌟</span> 市場規模
+        </h3>
+        <p class="text-text-main leading-relaxed mb-2">
+          「メイクブラシクリーナー」市場は<strong class="text-dark">世界で数百億円規模</strong>の大きさ
+        </p>
+        <p class="text-text-main leading-relaxed mb-2">
+          毎年<strong class="text-dark">約7%ペースで成長中</strong> → 時短・衛生意識の高まりで需要拡大
+        </p>
+        <p class="text-sm text-gray-500">
+          引用：<a href="https://dataintelo.com/report/makeup-brush-cleaner-market"
+            class="text-primary underline hover:text-dark"
+            target="_blank">https://dataintelo.com/report/makeup-brush-cleaner-market</a>
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-r from-accent-yellow/20 to-accent-pink/20 rounded-xl p-6">
+        <h3 class="text-lg font-bold text-primary mb-4">このロボットの差別化ポイント</h3>
+        <ul class="space-y-2 text-text-main">
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>物理的にブラシをこする「本当の洗浄」方式</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>3Dプリントで作った凹凸プレートによる高い洗浄力</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>自動上下運動で安定した洗浄</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-600 font-bold">✓</span>
+            <span>市場にほぼないロボット洗浄という新カテゴリ</span>
+          </li>
+        </ul>
+        <p class="mt-4 text-lg font-bold text-primary">→ 差別化余地が大きい！</p>
+      </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    🎬 デモ
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>🎬</span> デモ
+      </h2>
+
+      <!-- 
+      ✏️ デモ動画・写真挿入エリア
+      
+      【オプション1：YouTube動画を埋め込む場合】
+      1. YouTubeで動画をアップロード
+      2. 「共有」→「埋め込む」をクリック
+      3. コピーしたコードの src="..." の URL をコピー
+      4. 下の iframe の src に貼り付け
+      5. コメントアウトを外す
+      
+      【オプション2：ローカル動画ファイルを使う場合】
+      1. 動画ファイル（.mp4）を photo/ フォルダに配置
+      2. 下の <video> タグのコメントアウトを外す
+      3. src="photo/demo.mp4" のパスを確認
+      
+      【オプション3：写真のまま】
+      現在のまま写真を表示
+      -->
+
+      <!-- YouTube動画埋め込み（使う場合はコメントアウトを外す） -->
+      <!--
+      <div class="mb-6 rounded-2xl overflow-hidden shadow-lg bg-black aspect-video">
+        <iframe 
+          width="100%" 
+          height="100%" 
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+          title="ロボットデモ動画" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          class="w-full h-full">
+        </iframe>
+      </div>
+      -->
+
+      <!-- ローカル動画ファイル（使う場合はコメントアウトを外す） -->
+      <!--
+      <div class="mb-6 rounded-2xl overflow-hidden shadow-lg">
+        <video controls class="w-full h-auto">
+          <source src="photo/demo.mp4" type="video/mp4">
+          <source src="photo/demo.webm" type="video/webm">
+          お使いのブラウザは動画タグをサポートしていません。
+        </video>
+      </div>
+      -->
+
+      <!-- デモ写真（動画を使わない場合はこのまま） -->
+      <div class="mb-6 rounded-2xl overflow-hidden shadow-lg">
+        <img src="photo/demo.jpg" alt="ロボットのデモ" class="w-full h-auto object-cover"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="bg-gray-100 aspect-video hidden items-center justify-center">
+          <div class="text-center">
+            <p class="text-gray-500 text-lg mb-2">📷 デモ写真 または 🎬 動画</p>
+            <p class="text-sm text-gray-400">photo/demo.jpg を配置するか、上の動画埋め込みを使用してください</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+          <h3 class="font-bold text-green-700 mb-3 flex items-center gap-2">
+            <span>✨</span> 改良の成果
+          </h3>
+          <ul class="space-y-2 text-green-800">
+            <li class="flex items-center gap-2">
+              <span>🐻</span>
+              <span>ブラシの毛がほぐれやすく</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span>🔧</span>
+              <span>板も回転しなくなった！</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+          <h3 class="font-bold text-blue-700 mb-3 flex items-center gap-2">
+            <span>🎯</span> 実現した機能
+          </h3>
+          <ul class="space-y-2 text-blue-800">
+            <li class="flex items-center gap-2">
+              <span>✓</span>
+              <span>安定した洗浄動作</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span>✓</span>
+              <span>高い洗浄効果</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    📄 プレゼンテーション資料
+    ✏️ PDFファイル：photo/robot-presentation.pdf
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>📄</span> プレゼンテーション資料
+      </h2>
+      <p class="text-text-main mb-4">学校で発表したプレゼンテーション資料です</p>
+
+      <div class="bg-white rounded-xl p-6 shadow-inner">
+        <!-- PDF埋め込み -->
+        <embed src="photo/robot-presentation.pdf" type="application/pdf"
+          class="w-full h-[600px] rounded-lg shadow-md" />
+      </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    💭 学びと今後の展開
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section
+      class="mb-12 bg-gradient-to-br from-accent-pink/10 to-accent-yellow/10 rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>💭</span> 学びと今後の展開
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-primary mb-3">学んだこと</h3>
+          <ul class="space-y-2 text-text-main">
+            <li class="flex items-start gap-2">
+              <span class="text-primary">•</span>
+              <span>CADでの3Dモデリングスキル</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary">•</span>
+              <span>プロトタイピングの重要性</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary">•</span>
+              <span>ユーザー視点での問題発見と改良プロセス</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary">•</span>
+              <span>市場調査の手法</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-primary mb-3">今後の改善点</h3>
+          <ul class="space-y-2 text-text-main">
+            <li class="flex items-start gap-2">
+              <span class="text-green-600">→</span>
+              <span>完全自動化（Raspberry Piでモーター制御）</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600">→</span>
+              <span>複数ブラシ同時洗浄機能</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-600">→</span>
+              <span>洗浄液の自動交換システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    🔗 関連リンク
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="mb-12">
+      <div class="flex flex-wrap gap-4">
+        <!-- クマの耳が出るアニメーションを適用 🐻 -->
+        <a href="index.html#projects" class="bear-btn bear-btn-primary flex-1 min-w-[200px] py-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          他のプロジェクトを見る
+        </a>
+
+        <!-- クマの耳が出るアニメーションを適用 🐻 -->
+        <a href="index.html#about"
+          class="bear-btn flex-1 min-w-[200px] py-4 bg-white text-primary border-2 border-primary">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          About Me
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-text-main py-8 border-t-2 border-primary/20">
+    <p class="flex items-center justify-center gap-2">
+      © 2024 Riokkuma. Made with
+      <span class="text-accent-pink">💜</span>
+    </p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+# Windows System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# MacOS System Files
+.DS_Store
+
+# Text Editor / IDE Config
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporary Files
+tmp/
+temp/
+*.log
+
+# Ignore Documentation
+docs/

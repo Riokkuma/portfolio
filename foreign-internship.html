@@ -1,0 +1,534 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>海外研修レポート - アメリカ西海岸8泊10日 | Riokkuma Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-main': '#F8EBDD',
+            'card-bg': '#FFF9F4',
+            'primary': '#A47148',
+            'dark': '#5C4033',
+            'accent-pink': '#F7C6C7',
+            'accent-purple': '#E6B8E8',
+            'accent-yellow': '#F4C430',
+            'accent-blue': '#B8D8E8',
+            'text-main': '#6E5C4F',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <style>
+    .timeline-item {
+        position: relative;
+        padding-left: 3rem;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0.75rem;
+        top: 2rem;
+        bottom: -1rem;
+        width: 2px;
+        background: linear-gradient(to bottom, #A47148, transparent);
+    }
+    .timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: white;
+        border: 3px solid #A47148;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        z-index: 1;
+    }
+  </style>
+</head>
+
+<body class="bg-bg-main text-text-main">
+  <nav id="main-nav"
+    class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+        <a href="index.html"
+          class="hidden sm:inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-dark transition-colors border-l-2 border-primary/20 pl-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Home
+        </a>
+      </div>
+      <div class="hidden md:flex gap-2 lg:gap-4 items-center">
+        <a href="index.html#about" class="bear-nav-btn text-sm lg:text-base px-2">About</a>
+        <a href="index.html#qualifications" class="bear-nav-btn text-sm lg:text-base px-2">Qualifications</a>
+        <a href="index.html" class="bear-nav-btn text-sm lg:text-base px-2">Home</a>
+        <a href="school.html" class="bear-nav-btn text-sm lg:text-base px-2">School</a>
+        <a href="foreign-internship.html" class="bear-nav-btn text-sm lg:text-base px-2">Activities</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-dark p-2 hover:bg-primary/10 rounded-full transition-colors" aria-label="メニューを開く">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 📱 スマホ用ハンバーガーメニュー画面 -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[#FFF9F4]/95 backdrop-blur-sm opacity-0 invisible flex flex-col justify-center items-center">
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-dark p-3 hover:bg-primary/10 rounded-full transition-colors bg-[#EEDCC6] shadow-md border border-primary/20" aria-label="メニューを閉じる">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+      <div class="absolute top-10 left-10 text-6xl bear-decoration float">🧸</div>
+      <div class="absolute bottom-10 right-10 text-7xl bear-decoration wiggle">🐻</div>
+      <div class="absolute bottom-20 left-20 text-5xl bear-decoration float" style="animation-delay: 1s;">🐾</div>
+      <nav class="flex flex-col gap-8 text-center menu-content">
+          <a href="index.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Home
+          </a>
+          <a href="index.html#about" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> About
+          </a>
+          <a href="school.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> School
+          </a>
+          <a href="foreign-internship.html" class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+              <span class="menu-paw text-primary text-2xl">🐾</span> Activities 🐾
+          </a>
+      </nav>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6 py-24">
+    <!-- Hero Section -->
+    <header class="min-h-[60vh] flex flex-col justify-center items-center text-center mb-16 relative overflow-hidden">
+        <div class="absolute top-0 left-10 text-8xl opacity-20 wiggle">🌏</div>
+        <div class="absolute top-20 right-20 text-7xl opacity-20 float" style="animation-delay: 0.5s;">✈️</div>
+        <div class="absolute bottom-20 left-20 text-6xl opacity-10 wiggle" style="animation-delay: 1s;">🇺🇸</div>
+
+        <div class="mb-8 bounce-slow relative z-10 scale-110">
+            <div class="text-9xl filter drop-shadow-2xl">🌉</div>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-dark fade-in-up relative z-10">
+            Overseas Training Report
+        </h1>
+        <p class="text-2xl md:text-3xl text-primary mb-4 fade-in-up relative z-10" style="animation-delay: 0.2s;">
+            アメリカ西海岸 8泊10日の記録 🐻✈️
+        </p>
+        <p class="text-lg text-text-main fade-in-up relative z-10 font-bold" style="animation-delay: 0.4s;">
+            2024.11.18 — 11.27
+        </p>
+    </header>
+
+    <!-- 結論セクション -->
+    <section class="mb-24">
+        <div class="bg-gradient-to-r from-primary/90 to-dark rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent-yellow/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-accent-pink/10 rounded-full -ml-20 -mb-20 blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+            
+            <div class="relative z-10 text-center">
+                <div class="text-6xl mb-6">🌟</div>
+                <h2 class="text-4xl font-bold mb-8">結論：かけがえのない自己研鑽の機会</h2>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-10 border border-white/20 max-w-4xl mx-auto">
+                    <p class="text-xl leading-relaxed mb-6">
+                        当初の想像を遥かに超える、多くの学びと刺激を得ることができました。
+                    </p>
+                    <p class="text-2xl font-bold leading-relaxed">
+                        もし参加を迷っているのならば、<br>
+                        <span class="text-accent-yellow">迷わず挑戦することを強くお勧めします。</span>
+                    </p>
+                    <p class="text-lg mt-8 opacity-90 leading-relaxed">
+                        10日間、慣れ親しんだ環境を離れて海外で自立して生活すること、<br>
+                        その経験自体が将来の大きな糧になると確信しています。 🐻✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 基本情報 -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>📋</span> 研修の概要
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-card-bg rounded-2xl p-8 shadow-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                <div class="text-4xl mb-4">📍</div>
+                <h3 class="text-xl font-bold text-dark mb-3">主な訪問先</h3>
+                <ul class="text-text-main space-y-1">
+                    <li>• サンフランシスコ</li>
+                    <li>• シリコンバレー</li>
+                    <li>• ヨセミテ国立公園</li>
+                    <li>• ロサンゼルス</li>
+                </ul>
+            </div>
+
+            <div class="bg-card-bg rounded-2xl p-8 shadow-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                <div class="text-4xl mb-4">📅</div>
+                <h3 class="text-xl font-bold text-dark mb-3">研修期間</h3>
+                <p class="text-text-main">2024.11.18〜27</p>
+                <p class="text-primary font-bold text-2xl mt-2">8泊10日</p>
+            </div>
+
+            <div class="bg-card-bg rounded-2xl p-8 shadow-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                <div class="text-4xl mb-4">👥</div>
+                <h3 class="text-xl font-bold text-dark mb-3">参加者数</h3>
+                <p class="text-text-main">全体：約150名</p>
+                <p class="text-text-main">自校：40名弱</p>
+            </div>
+
+            <div class="bg-card-bg rounded-2xl p-8 shadow-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="text-xl font-bold text-dark mb-3">参考費用</h3>
+                <p class="text-primary font-bold text-2xl">約80万円</p>
+                <p class="text-text-main text-xs mt-2 italic">※別途現地滞在費</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 印象に残ったこと TOP3 -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>✨</span> 印象深い体験 TOP3
+        </h2>
+
+        <div class="grid gap-12">
+            <!-- 1位: VR体験 -->
+            <div class="bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-3xl p-10 border-2 border-accent-blue/20 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-7xl opacity-10">🤖</div>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-accent-yellow text-dark w-20 h-20 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg shrink-0">1</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">最先端テクノロジー：Meta StoreでのVR体験</h3>
+                        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40">
+                            <p class="text-text-main leading-relaxed mb-4">
+                                視力に課題を感じていた私にとって、VRゴーグルを通じた外界の描写は衝撃的でした。<strong class="text-primary">「すべてが鮮明に見え、文字が難なく読める」という感動</strong>は、これまでの日常を一変させるものでした。
+                            </p>
+                            <p class="text-text-main leading-relaxed">
+                                デバイスが眼鏡のように小型化され、リアルタイム翻訳などの機能が統合される未来を肌で感じ、<strong class="text-primary">テクノロジーが生活を拡張する可能性</strong>を深く再認識しました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2位: ディズニーミュージアム -->
+            <div class="bg-gradient-to-r from-accent-pink/10 to-accent-purple/10 rounded-3xl p-10 border-2 border-accent-pink/20 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-7xl opacity-10">🏰</div>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-accent-yellow text-dark w-20 h-20 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg shrink-0">2</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">クリエイティビティの源泉：ウォルト・ディズニー・ファミリー・ミュージアム</h3>
+                        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40">
+                            <p class="text-text-main leading-relaxed">
+                                世界を魅了し続けるストーリーテリングとデザインの根幹に触れることができました。ワーナー・ブラザースのスタジオと比較しても、<strong class="text-primary">「なぜ人々を惹きつけるのか」というクリエイティブの本質的な共通点</strong>を見出せたことは、デザインを学ぶ上で非常に大きな収穫でした。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3位: トラブル対応 -->
+            <div class="bg-gradient-to-r from-accent-yellow/10 to-accent-pink/10 rounded-3xl p-10 border-2 border-accent-yellow/20 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 text-7xl opacity-10">❄️</div>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-accent-yellow text-dark w-20 h-20 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg shrink-0">3</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-dark mb-4">適応力と連携：宿泊施設での機器トラブル</h3>
+                        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/40">
+                            <p class="text-text-main leading-relaxed mb-4">
+                                宿泊先の冷蔵庫が故障し、用意していた食材に被害が出るという予期せぬ事態に遭遇しました。
+                            </p>
+                            <p class="text-text-main leading-relaxed">
+                                しかし、同室のメンバーと即座に連携。「一方が情報を聞き取り、もう一方が交渉を行う」という<strong class="text-primary">役割分担による冷静な対応</strong>で解決に導いた経験は、海外ならではの「トラブル対応力」を養う絶好の機会となりました。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 訪問リスト -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>🏢</span> 訪問プログラム
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-card-bg rounded-3xl p-8 shadow-lg border border-primary/10">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <span>💼</span> 企業・学術機関訪問
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🔧</span>
+                        <span class="font-bold">Intel ミュージアム</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🔍</span>
+                        <span class="font-bold">Google 本社（ビジターセンター）</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🍎</span>
+                        <span class="font-bold">Apple パーク・ビジターセンター</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🎨</span>
+                        <span class="font-bold">Autodesk</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🎓</span>
+                        <div>
+                            <span class="font-bold">オーティス・カレッジ・オブ・アート＆デザイン</span>
+                            <p class="text-xs text-text-main/70">1日体験・交流プログラム</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🎬</span>
+                        <span class="font-bold">クリーチャー・エフェクツ（技術スタジオ）</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-card-bg rounded-3xl p-8 shadow-lg border border-primary/10">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <span>🗺️</span> 観光・文化体験
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🤖</span>
+                        <span class="font-bold">Meta Store（VR体験）</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🌉</span>
+                        <span class="font-bold">ゴールデンゲートブリッジ</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🏔️</span>
+                        <span class="font-bold">ヨセミテ国立公園</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🎬</span>
+                        <span class="font-bold">ハリウッド</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🏖️</span>
+                        <span class="font-bold">サンタモニカ・ピア</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">🏰</span>
+                        <span class="font-bold">カリフォルニア・ディズニーリゾート</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/50 p-4 rounded-xl border border-primary/5">
+                        <span class="text-2xl">✨</span>
+                        <span class="font-bold">ウォルト・ディズニー・ファミリー・ミュージアム</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 食文化と生活 -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>🍽️</span> 現地生活のリアル
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-accent-yellow/5 rounded-3xl p-8 border-2 border-accent-yellow/20">
+                <h3 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+                    <span>🍴</span> 食生活
+                </h3>
+                <div class="space-y-6 text-text-main">
+                    <div>
+                        <h4 class="font-bold text-primary mb-2 italic">Breakfast</h4>
+                        <p>ホテルの朝食バイキングを利用。なかでも<span class="font-bold">シェフが目の前で作る出来たてのオムレツ</span>は格別の美味しさでした。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-2 italic">Meals & Cooking</h4>
+                        <p>外食（マクドナルドの肉厚なパティに感動！）に加え、自炊も楽しみました。カレー、ラーメン、パンケーキなど、多人数での調理は良いリフレッシュになりました。🐻🍳</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-accent-blue/5 rounded-3xl p-8 border-2 border-accent-blue/20">
+                <h3 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+                    <span>🌎</span> 日本との相違・発見
+                </h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/60 p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-2">🍞</span>
+                        <p class="text-sm font-bold">パン類の食味の違い</p>
+                    </div>
+                    <div class="bg-white/60 p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-2">⏰</span>
+                        <p class="text-sm font-bold">時差への適応の難しさ</p>
+                    </div>
+                    <div class="bg-white/60 p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-2">🛁</span>
+                        <p class="text-sm font-bold">空調と入浴環境の差</p>
+                    </div>
+                    <div class="bg-white/60 p-4 rounded-xl text-center">
+                        <span class="text-2xl block mb-2">🐴</span>
+                        <p class="text-sm font-bold">多様なアクティビティ</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-primary text-white text-center rounded-xl font-bold">
+                    結論：日本の快適さを改めて実感 🇯🇵✨
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 持ち物リスト -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>🎒</span> 準備して良かったもの・教訓
+        </h2>
+        <div class="bg-card-bg rounded-3xl p-10 shadow-xl border-2 border-primary/20">
+            <div class="grid md:grid-cols-2 gap-12 mb-10">
+                <div>
+                    <h3 class="font-bold text-primary mb-6 flex items-center gap-2"><span>✅</span> 非常に助かったもの</h3>
+                    <ul class="space-y-3 text-text-main">
+                        <li class="flex items-center gap-3 border-b border-primary/10 pb-2">
+                            <span class="text-xl">💊</span>
+                            <span><strong class="text-dark">常備薬（特に酔い止め）</strong>：長時間移動の必須アイテム</span>
+                        </li>
+                        <li class="flex items-center gap-3 border-b border-primary/10 pb-2">
+                            <span class="text-xl">🧸</span>
+                            <span><strong class="text-dark">癒やしのアイテム</strong>：リラックス効果（リラックマなど）</span>
+                        </li>
+                        <li class="flex items-center gap-3 border-b border-primary/10 pb-2">
+                            <span class="text-xl">📱</span>
+                            <span><strong class="text-dark">デジタル管理</strong>：クレカのスマホ登録で決済を円滑に</span>
+                        </li>
+                        <li class="flex items-center gap-3 border-b border-primary/10 pb-2">
+                            <span class="text-xl">🧣</span>
+                            <span><strong class="text-dark">紫外線対策</strong>：サングラスなどは必需品</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-dark mb-6 flex items-center gap-2"><span>💡</span> 今後の反省点</h3>
+                    <ul class="space-y-3 text-text-main">
+                        <li class="flex items-center gap-3"><span>🔹</span> カトラリー（スプーン等）の予備</li>
+                        <li class="flex items-center gap-3"><span>🔹</span> 必要十分な化粧道具の厳選</li>
+                        <li class="flex items-center gap-3"><span>🔹</span> お土産用に適したサブバッグ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-8 bg-gradient-to-r from-accent-yellow/20 to-accent-pink/20 rounded-2xl text-center">
+                <p class="text-text-main text-xl font-bold italic leading-relaxed">
+                    " 一番の必需品は、自分から世界へ<span class="text-primary text-2xl">「話しかける勇気」</span>でした " 💪✨
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 語学とコミュニケーション -->
+    <section class="mb-24">
+        <h2 class="text-4xl font-bold text-dark mb-12 flex items-center gap-3">
+            <span>🗣️</span> 英語というツール
+        </h2>
+        <div class="bg-gradient-to-br from-accent-blue/10 to-accent-purple/10 rounded-3xl p-10 border-2 border-accent-blue/20">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold text-dark mb-4">事前の準備</h3>
+                    <p class="text-text-main leading-relaxed">
+                        「Duolingo」等を使用して、日常的なフレーズの反復練習を行いました。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-dark mb-4">現地での気付き</h3>
+                    <p class="text-text-main leading-relaxed mb-4">
+                        完璧な文法よりも、<strong class="text-primary">「相手の話を丁寧に聴き、反応する」</strong>ことで、買い物や簡単な対話は十分に成立することを実感しました。
+                    </p>
+                    <p class="text-text-main leading-relaxed">
+                        自分で理解できる喜びが、さらなる学習へのモチベーションに繋がっています。
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 bg-white/60 p-6 rounded-2xl border border-white/40 flex items-center gap-4">
+                <span class="text-4xl">💡</span>
+                <p class="text-text-main text-sm font-bold">アドバイス：基礎的な英会話に慣れておくだけで、現地での楽しさは数倍に広がります✨</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 思わぬ収穫 -->
+    <section class="mb-24">
+        <div class="bg-accent-pink/10 rounded-3xl p-10 border-2 border-accent-pink/30 text-center">
+            <div class="text-6xl mb-6">👥✨</div>
+            <h2 class="text-3xl font-bold text-dark mb-6">学科・学年を超えた交流</h2>
+            <p class="text-text-main text-xl leading-relaxed max-w-3xl mx-auto">
+                研修を通じ、他学科の学生とも交流を深めることができました。SNSでの繋がりができ、<strong class="text-primary">「学校内での新たなコミュニティ」</strong>が生まれたことは、予想外の、しかし非常に素晴らしい収穫でした。🐻💕
+            </p>
+        </div>
+    </section>
+
+    <!-- 最終メッセージ -->
+    <section class="mb-24">
+        <div class="bg-gradient-to-r from-primary to-dark rounded-[4rem] p-12 md:p-16 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 text-[20rem] opacity-5 rotate-12">🇺🇸</div>
+            <div class="text-center relative z-10">
+                <div class="text-7xl mb-10">🌏✨</div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-10">未来のクリエイターへ</h2>
+                <div class="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed">
+                    <p>
+                        海外研修は単なる旅行ではありません。<br>
+                        未知の文化、最新のテクノロジー、そして何より<span class="text-accent-yellow font-bold">「新しい自分」に出会う旅</span>です。
+                    </p>
+                    <p class="text-3xl font-bold text-accent-yellow scale-110 mb-10">
+                        迷っているならば、ぜひ一歩、外の世界へ踏み出してみてください。
+                    </p>
+                    <p>
+                        この10日間の経験が、みなさんの視座を高め、<br>
+                        今後の人生や制作活動において「揺るぎない自信」となることを願っています。<br>
+                    </p>
+                    <p class="text-2xl font-bold mt-12 opacity-90 underline decoration-accent-yellow underline-offset-8">
+                        It’s definitely worth the experience! 🐾🐻🇺🇸🌉
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="flex flex-wrap gap-4">
+        <a href="index.html#projects" class="bear-btn bear-btn-primary flex-1 min-w-[200px] py-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          他のプロジェクトを見る
+        </a>
+        <a href="index.html" class="bear-btn flex-1 min-w-[200px] py-4 bg-white text-primary border-2 border-primary">
+          Homeへ戻る
+        </a>
+    </div>
+  </main>
+
+  <footer class="text-center text-text-main py-8 border-t-2 border-primary/20">
+    <p class="flex items-center justify-center gap-2">
+      © 2024 Riokkuma. Made with
+      <span class="text-accent-pink">💜</span>
+    </p>
+  </footer>
+</body>
+
+</html>
