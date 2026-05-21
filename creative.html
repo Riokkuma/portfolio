@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Works | Riokkuma Portfolio</title>
+  <meta name="description" content="リオックマのクリエイティブ制作ページ。学校の授業でPhotoshopによる写真加工・Premiere Proによる動画編集を学びました。">
+
+  <!-- Tailwind CSS（他ページと同じ設定） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-main': '#F8EBDD',
+            'card-bg': '#FFF9F4',
+            'primary': '#A47148',
+            'dark': '#5C4033',
+            'accent-pink': '#F7C6C7',
+            'accent-purple': '#E6B8E8',
+            'accent-yellow': '#F4C430',
+            'text-main': '#6E5C4F',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* 手書き風フォント適用（他ページと同じ） */
+    body {
+      font-family: 'Yomogi', sans-serif !important;
+      font-size: 105%;
+      letter-spacing: 0.02em;
+    }
+
+    .text-sm {
+      font-size: 0.95rem !important;
+      line-height: 1.6;
+    }
+
+    .bear-nav-btn {
+      font-size: 1.1rem !important;
+      padding: 0.5rem 1rem !important;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.75rem !important;
+    }
+/* 動画リンクボタンのスタイル */
+.video-link-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-link-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.3);
+}
+
+.video-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #F7C6C7, #E6B8E8, #A47148);
+  box-shadow: 0 10px 25px rgba(164, 113, 72, 0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-link-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+    /* ツールカードのホバーアニメーション */
+    .tool-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.25);
+    }
+  </style>
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-bg-main text-text-main">
+
+  <!-- ナビゲーションヘッダー（他ページと同じ構造） -->
+  <nav id="main-nav"
+    class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- ロゴ + Homeリンク -->
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-2xl font-bold text-dark title-font">Riokkuma</a>
+        <a href="index.html"
+          class="hidden sm:inline-flex items-center gap-1 text-sm font-bold text-primary hover:text-dark transition-colors border-l-2 border-primary/20 pl-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Home
+        </a>
+      </div>
+
+      <!-- デスクトップナビ -->
+      <div class="hidden md:flex gap-2 lg:gap-4 items-center">
+        <a href="index.html#about" class="bear-nav-btn text-sm lg:text-base px-2">About</a>
+        <a href="index.html#qualifications" class="bear-nav-btn text-sm lg:text-base px-2">Qualifications</a>
+        <a href="index.html#skills" class="bear-nav-btn text-sm lg:text-base px-2">Skills</a>
+        <a href="school.html" class="bear-nav-btn text-sm lg:text-base px-2">School</a>
+        <a href="foreign-internship.html" class="bear-nav-btn text-sm lg:text-base px-2">Activities</a>
+        <a href="index.html#projects" class="bear-nav-btn text-sm lg:text-base px-2">Projects</a>
+        <!-- 現在ページなのでハイライト -->
+        <a href="creative.html" class="bear-nav-btn text-primary font-bold text-sm lg:text-base px-2">Creative 🎨</a>
+      </div>
+
+      <!-- ハンバーガーボタン（モバイル） -->
+      <button id="mobile-menu-btn" class="md:hidden text-dark p-2 hover:bg-primary/10 rounded-full transition-colors"
+        aria-label="メニューを開く">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 📱 スマホ用ハンバーガーメニュー（他ページと同じ構造） -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-[60] bg-[#FFF9F4]/95 backdrop-blur-sm opacity-0 invisible flex flex-col justify-center items-center">
+    <!-- 閉じるボタン -->
+    <button id="mobile-menu-close"
+      class="absolute top-6 right-6 text-dark p-3 hover:bg-primary/10 rounded-full transition-colors bg-[#EEDCC6] shadow-md border border-primary/20"
+      aria-label="メニューを閉じる">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- クマ装飾 -->
+    <div class="absolute top-10 left-10 text-6xl bear-decoration float">🧸</div>
+    <div class="absolute bottom-10 right-10 text-7xl bear-decoration wiggle">🐻</div>
+    <div class="absolute bottom-20 left-20 text-5xl bear-decoration float" style="animation-delay: 1s;">🐾</div>
+
+    <!-- モバイルナビリンク -->
+    <nav class="flex flex-col gap-8 text-center menu-content">
+      <a href="index.html"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3 border-b-2 border-primary/30 pb-2">
+        <span class="menu-paw text-primary text-2xl">🐾</span> Home
+      </a>
+      <a href="index.html#about"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+        <span class="menu-paw text-primary text-2xl">🐾</span> About
+      </a>
+      <a href="index.html#qualifications"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+        <span class="menu-paw text-primary text-2xl">🐾</span> Qualifications
+      </a>
+      <a href="school.html"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+        <span class="menu-paw text-primary text-2xl">🐾</span> School 🏫
+      </a>
+      <a href="foreign-internship.html"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+        <span class="menu-paw text-primary text-2xl">🐾</span> Activities 🐾
+      </a>
+      <a href="index.html#projects"
+        class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+        <span class="menu-paw text-primary text-2xl">🐾</span> Projects
+      </a>
+      <!-- 現在ページ：ハイライト -->
+      <a href="creative.html"
+        class="mobile-nav-link text-3xl font-bold text-primary hover:text-dark transition-colors flex items-center justify-center gap-3 border-b-2 border-primary/30 pb-2">
+        <span class="menu-paw text-accent-pink text-2xl">🐾</span> Creative 🎨
+      </a>
+    </nav>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6 py-24">
+
+    <!-- ═══════════════════════════════════════════════════
+    🎨 ヒーローセクション
+    ═══════════════════════════════════════════════════ -->
+    <div
+      class="mb-12 bg-gradient-to-br from-accent-purple/30 via-accent-pink/20 to-accent-yellow/30 rounded-3xl p-12 shadow-2xl border-2 border-primary/20 relative overflow-hidden">
+      <!-- 装飾 -->
+      <div class="absolute top-4 right-4 text-6xl opacity-20 float-animation">🎨</div>
+      <div class="absolute bottom-4 left-4 text-5xl opacity-20 float-animation" style="animation-delay: 0.5s;">🎬</div>
+      <div class="absolute top-1/2 left-1/4 text-4xl opacity-15 sparkle">✨</div>
+
+      <div class="relative z-10">
+        <h1 class="text-5xl font-bold text-dark mb-4 flex items-center gap-3">
+          Creative Works
+          <span class="text-6xl">🎨</span>
+        </h1>
+        <p class="text-2xl text-primary mb-6">
+          Photoshop × Premiere Pro 🧸ᩚ
+        </p>
+        <p class="text-lg text-text-main mb-8 leading-relaxed max-w-3xl">
+          学校の授業でAdobe Creative Cloudを活用したクリエイティブ制作を学びました。
+          Photoshopで写真を丁寧に加工し、Premiere Proでスライドショー動画に仕上げています。
+        </p>
+
+        <!-- 使用ツールタグ -->
+        <div class="flex flex-wrap gap-3">
+          <span class="tag-chip">Adobe Photoshop</span>
+          <span class="tag-chip">Adobe Premiere Pro</span>
+          <span class="tag-chip">写真加工</span>
+          <span class="tag-chip">動画編集</span>
+          <span class="tag-chip">スライドショー</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+    🎬 Premiere Pro：動画セクション
+    ═══════════════════════════════════════════════════ -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-dark mb-8 flex items-center gap-2">
+        <span>🎬</span> Premiere Pro ― スライドショー動画
+      </h2>
+
+      <div class="bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+<!-- 動画リンクボタン -->
+<div class="grid md:grid-cols-2 gap-6 mb-6">
+  <!-- ドールメイク -->
+  <div
+    class="video-link-card bg-gradient-to-br from-accent-pink/30 to-accent-purple/20 rounded-2xl p-6 shadow-lg border-2 border-primary/20 text-center">
+    <div class="text-5xl mb-4">🎀</div>
+    <h3 class="text-xl font-bold text-dark mb-3">
+      ドールメイク動画
+    </h3>
+    <p class="text-text-main mb-5 leading-relaxed">
+      Photoshopで加工した写真を使った、ドールメイク風のスライドショー動画です 🧸
+    </p>
+    <a href="https://youtube.com/shorts/27wvbE3QIlA?feature=share"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="video-link-btn">
+      <span>🐻</span>
+      <span>クリックして見る</span>
+      <span>🎬</span>
+    </a>
+  </div>
+
+  <!-- ポートレート -->
+  <div
+    class="video-link-card bg-gradient-to-br from-accent-yellow/30 to-accent-pink/20 rounded-2xl p-6 shadow-lg border-2 border-primary/20 text-center">
+    <div class="text-5xl mb-4">📸</div>
+    <h3 class="text-xl font-bold text-dark mb-3">
+      ポートレート動画
+    </h3>
+    <p class="text-text-main mb-5 leading-relaxed">
+      写真の雰囲気や色味を大切にした、ポートレート作品のスライドショー動画です 🐻
+    </p>
+    <a href="https://youtube.com/shorts/z-5TgMDgZAs?feature=share"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="video-link-btn">
+      <span>🐻</span>
+      <span>クリックして見る</span>
+      <span>🎬</span>
+    </a>
+  </div>
+</div>
+        <!-- 動画の説明 -->
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-gradient-to-br from-accent-purple/20 to-accent-purple/10 rounded-xl p-6">
+            <h3 class="font-bold text-primary mb-3 flex items-center gap-2 text-lg">
+              <span>🎞️</span> 動画について
+            </h3>
+            <ul class="text-text-main space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>Photoshopで加工した写真をスライドショーとして構成</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>Premiere Proで映像・テキスト・BGMを編集</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>トランジションやエフェクトを使って仕上げ</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-accent-pink/20 to-accent-pink/10 rounded-xl p-6">
+            <h3 class="font-bold text-primary mb-3 flex items-center gap-2 text-lg">
+              <span>✏️</span> 制作のポイント
+            </h3>
+            <ul class="text-text-main space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>写真の色調をPhotoshopで統一してから動画に使用</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>見ている人が飽きないテンポ感を意識</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary">🐻</span>
+                <span>学校の授業課題として制作・提出</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    🎨 Photoshop：写真加工セクション
+    ═══════════════════════════════════════════════════ -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-dark mb-8 flex items-center gap-2">
+        <span>🖼️</span> Photoshop ― 写真加工
+      </h2>
+
+      <div class="bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+        <p class="text-text-main leading-relaxed mb-6">
+          動画の中で流れる写真は、すべてPhotoshopで加工したものです。
+          カラーグレーディング・明るさ調整・レタッチなど、基本的な写真編集を学びました 🐻
+        </p>
+
+        <!-- Photoshopで学んだ技術 -->
+        <div class="grid md:grid-cols-3 gap-4">
+          <div
+            class="tool-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-200">
+            <div class="text-4xl mb-3 text-center">🌈</div>
+            <h3 class="font-bold text-blue-900 mb-2 text-center">カラー補正</h3>
+            <ul class="text-sm text-blue-700 space-y-1">
+              <li>• 色相・彩度の調整</li>
+              <li>• カラーグレーディング</li>
+              <li>• トーンカーブの活用</li>
+            </ul>
+          </div>
+
+          <div
+            class="tool-card bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl p-6 border-2 border-pink-200">
+            <div class="text-4xl mb-3 text-center">✨</div>
+            <h3 class="font-bold text-pink-900 mb-2 text-center">レタッチ</h3>
+            <ul class="text-sm text-pink-700 space-y-1">
+              <li>• 明るさ・コントラスト</li>
+              <li>• スポット修正</li>
+              <li>• シャープネス調整</li>
+            </ul>
+          </div>
+
+          <div
+            class="tool-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-200">
+            <div class="text-4xl mb-3 text-center">🖌️</div>
+            <h3 class="font-bold text-purple-900 mb-2 text-center">合成・加工</h3>
+            <ul class="text-sm text-purple-700 space-y-1">
+              <li>• レイヤー操作</li>
+              <li>• マスク処理</li>
+              <li>• テキスト・装飾追加</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    🎯 使用ツール紹介
+    ═══════════════════════════════════════════════════ -->
+    <section class="mb-12 bg-gradient-to-br from-accent-yellow/20 to-accent-pink/20 rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>🎯</span> 使用ツール
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Photoshop -->
+        <div class="tool-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+              Ps
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-dark">Adobe Photoshop</h3>
+              <p class="text-sm text-text-main">写真加工・画像編集</p>
+            </div>
+          </div>
+          <p class="text-text-main text-sm leading-relaxed">
+            学校の授業で習得。写真のカラー補正・レタッチ・合成などの基本操作を学び、
+            スライドショー動画用の写真を仕上げました。
+          </p>
+        </div>
+
+        <!-- Premiere Pro -->
+        <div class="tool-card bg-white rounded-xl p-6 shadow-md">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 bg-gradient-to-br from-purple-700 to-purple-900 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+              Pr
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-dark">Adobe Premiere Pro</h3>
+              <p class="text-sm text-text-main">動画編集</p>
+            </div>
+          </div>
+          <p class="text-text-main text-sm leading-relaxed">
+            学校の授業で習得。Photoshopで加工した写真を使ってスライドショー動画を制作。
+            カット編集・トランジション・テキスト挿入などを学びました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    💭 学びと振り返り
+    ═══════════════════════════════════════════════════ -->
+    <section class="mb-12 bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
+      <h2 class="text-2xl font-bold text-dark mb-6 flex items-center gap-2">
+        <span>💭</span> 学びと振り返り
+      </h2>
+
+      <div class="space-y-6">
+        <div class="bg-gradient-to-br from-accent-pink/10 to-accent-pink/5 rounded-xl p-6">
+          <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
+            <span>🐻</span> 学んだこと
+          </h3>
+          <p class="text-text-main leading-relaxed">
+            PhotoshopとPremiere Proを組み合わせることで、写真から動画まで一貫したクリエイティブ制作ができるようになりました。
+            画像の色調を整えてから動画に組み込むことで、完成度が大きく上がることを実感しています。
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-accent-purple/10 to-accent-purple/5 rounded-xl p-6">
+          <h3 class="font-bold text-primary mb-3 flex items-center gap-2">
+            <span>🎯</span> 今後やりたいこと
+          </h3>
+          <ul class="text-text-main space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-primary">→</span>
+              <span>After Effectsを使ったモーショングラフィックスの追加</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary">→</span>
+              <span>より凝ったカラーグレーディングの習得</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary">→</span>
+              <span>SNS向け縦型動画の制作にも挑戦したい</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+    🔗 関連リンク
+    ═══════════════════════════════════════════════════ -->
+    <section class="mb-12">
+      <div class="flex flex-wrap gap-4">
+        <!-- 他のプロジェクトへ -->
+        <a href="index.html#projects" class="bear-btn bear-btn-primary flex-1 min-w-[200px] py-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          他のプロジェクトを見る
+        </a>
+
+        <!-- Homeへ -->
+        <a href="index.html"
+          class="bear-btn flex-1 min-w-[200px] py-4 bg-white text-primary border-2 border-primary">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          Home
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター（他ページと同じ） -->
+  <footer class="text-center text-text-main py-8 border-t-2 border-primary/20">
+    <p class="flex items-center justify-center gap-2">
+      © 2024 Riokkuma. Made with
+      <span class="text-accent-pink">💜</span>
+    </p>
+  </footer>
+
+</body>
+
+</html>
