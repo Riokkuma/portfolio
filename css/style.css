@@ -299,3 +299,163 @@ html {
 #mobile-menu.menu-open .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
 #mobile-menu.menu-open .mobile-nav-link:nth-child(4) { transition-delay: 0.4s; }
 #mobile-menu.menu-open .mobile-nav-link:nth-child(5) { transition-delay: 0.5s; }
+
+/* ==========================================================================
+   📌 フォント・タイポグラフィ共通設定（お片付けで追加） 🐻🐾
+   ========================================================================== */
+
+/* 🌸 手書き風フォント（Yomogi）適用（ページ別制御用） */
+.font-yomogi {
+    font-family: 'Yomogi', sans-serif !important;
+    font-size: 105%;
+    letter-spacing: 0.02em;
+}
+
+/* Yomogi適用ページ内のフォントサイズ微調整（HTML側の書き換え不要！） */
+.font-yomogi .text-sm {
+    font-size: 0.95rem !important;
+    line-height: 1.6;
+}
+
+.font-yomogi .bear-nav-btn {
+    font-size: 1.1rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.font-yomogi .mobile-nav-link {
+    font-size: 1.75rem !important;
+}
+
+/* 🏫 Zen丸ゴシック適用（ページ別制御用） */
+.font-zen-maru {
+    font-family: 'Zen Maru Gothic', sans-serif !important;
+    color: #5C4033;
+}
+
+
+/* ==========================================================================
+   🎬 クリエイティブページ固有スタイル (creative.html) 🎨
+   ========================================================================== */
+.video-link-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-link-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.3);
+}
+
+.video-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.9rem 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #F7C6C7, #E6B8E8, #A47148);
+    box-shadow: 0 10px 25px rgba(164, 113, 72, 0.25);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-link-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.tool-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.25);
+}
+
+/* ==========================================================================
+   ✈️ 海外研修レポートページ固有スタイル (foreign-internship.html) 🇺🇸
+   ========================================================================== */
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 2rem;
+    bottom: -1rem;
+    width: 2px;
+    background: linear-gradient(to bottom, #A47148, transparent);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: white;
+    border: 3px solid #A47148;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   🏫 学校紹介ページ固有スタイル (school.html) 🎒
+   ========================================================================== */
+.school-card {
+    background-color: #FFF9F4;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px -10px rgba(164, 113, 72, 0.15);
+    border: 2px solid rgba(164, 113, 72, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.school-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px -10px rgba(164, 113, 72, 0.2);
+}
+
+.section-tag {
+    background: linear-gradient(135deg, #F7C6C7 0%, #F4C430 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.floating-paw {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* 🐻 画像の簡単保存防止（ドラッグ・長押し禁止） 🐾 */
+img {
+    /* ドラッグして保存するのを禁止するよ */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+
+    /* スマホでの長押しメニューや、画像の選択を禁止するよ */
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+

@@ -79,4 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('section, header, footer').forEach(el => {
         el.style.opacity = '1';
     });
+
+    // 🐻 画像の簡単保存防止（右クリック禁止・ドラッグ禁止） 🐾
+    document.querySelectorAll('img').forEach(img => {
+        // 右クリックで「名前を付けて保存」メニューが出るのを防ぐよ
+        img.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+        // ドラッグ開始をJavaScriptでもしっかり禁止するよ
+        img.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+    });
 });
+

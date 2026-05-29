@@ -9,24 +9,7 @@
 
   <!-- Tailwind CSS（他ページと同じ設定） -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'bg-main': '#F8EBDD',
-            'card-bg': '#FFF9F4',
-            'primary': '#A47148',
-            'dark': '#5C4033',
-            'accent-pink': '#F7C6C7',
-            'accent-purple': '#E6B8E8',
-            'accent-yellow': '#F4C430',
-            'text-main': '#6E5C4F',
-          }
-        }
-      }
-    }
-  </script>
+  <script src="js/tailwind-config.js"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,71 +19,10 @@
   <!-- 共通スタイル -->
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    /* 手書き風フォント適用（他ページと同じ） */
-    body {
-      font-family: 'Yomogi', sans-serif !important;
-      font-size: 105%;
-      letter-spacing: 0.02em;
-    }
-
-    .text-sm {
-      font-size: 0.95rem !important;
-      line-height: 1.6;
-    }
-
-    .bear-nav-btn {
-      font-size: 1.1rem !important;
-      padding: 0.5rem 1rem !important;
-    }
-
-    .mobile-nav-link {
-      font-size: 1.75rem !important;
-    }
-/* 動画リンクボタンのスタイル */
-.video-link-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-link-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.3);
-}
-
-.video-link-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  padding: 0.9rem 1.5rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #F7C6C7, #E6B8E8, #A47148);
-  box-shadow: 0 10px 25px rgba(164, 113, 72, 0.25);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.video-link-btn:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-    /* ツールカードのホバーアニメーション */
-    .tool-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(164, 113, 72, 0.25);
-    }
-  </style>
-
   <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-bg-main text-text-main">
+<body class="bg-bg-main text-text-main font-yomogi">
 
   <!-- ナビゲーションヘッダー（他ページと同じ構造） -->
   <nav id="main-nav"

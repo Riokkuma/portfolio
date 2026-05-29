@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -6,58 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>美容垢 SNS運用 | Riokkuma Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'bg-main': '#F8EBDD',
-            'card-bg': '#FFF9F4',
-            'primary': '#A47148',
-            'dark': '#5C4033',
-            'accent-pink': '#F7C6C7',
-            'accent-purple': '#E6B8E8',
-            'accent-yellow': '#F4C430',
-            'text-main': '#6E5C4F',
-          }
-        }
-      }
-    }
-  </script>
+  <script src="js/tailwind-config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* 美容SNSページ限定：手書き風フォント（Yomogi）の適用 */
-    body {
-      font-family: 'Yomogi', sans-serif !important;
-      /* 全体的に少し大きく、読みやすい太さに調整 🐻 */
-      font-size: 105%;
-      letter-spacing: 0.02em;
-    }
-
-    /* 小さい文字が見にくいとのことなので、最小サイズを底上げ */
-    .text-sm {
-      font-size: 0.95rem !important;
-      line-height: 1.6;
-    }
-
-    /* ヘッダーのナビゲーションボタンを大きくして選択しやすく 🐾 */
-    .bear-nav-btn {
-      font-size: 1.1rem !important;
-      padding: 0.5rem 1rem !important;
-    }
-
-    /* スマホメニューの文字も可愛く大きく */
-    .mobile-nav-link {
-      font-size: 1.75rem !important;
-    }
-  </style>
   <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-bg-main text-text-main">
+<body class="bg-bg-main text-text-main font-yomogi">
   <nav id="main-nav"
     class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">

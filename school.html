@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -7,76 +7,15 @@
     <title>学校紹介 - さいたまIT・WEB専門学校 | Riokkuma Portfolio</title>
     <meta name="description" content="リオックマが通う「さいたまIT・WEB専門学校」の紹介ページです。学科や施設、アイドル「おもち」についても紹介しています。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'bg-main': '#F8EBDD',
-                        'card-bg': '#FFF9F4',
-                        'primary': '#A47148',
-                        'dark': '#5C4033',
-                        'accent-pink': '#F7C6C7',
-                        'accent-purple': '#E6B8E8',
-                        'accent-yellow': '#F4C430',
-                        'text-main': '#6E5C4F',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* 🏫 学校紹介ページ限定：かわいくて読みやすい「Zen丸ゴシック」 🐾 */
-        body {
-            font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: #FDF6EE;
-            color: #5C4033;
-        }
-
-        .title-font {
-            font-weight: 700;
-        }
-
-        .school-card {
-            background-color: #FFF9F4;
-            border-radius: 2rem;
-            box-shadow: 0 10px 30px -10px rgba(164, 113, 72, 0.15);
-            border: 2px solid rgba(164, 113, 72, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .school-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px -10px rgba(164, 113, 72, 0.2);
-        }
-
-        .section-tag {
-            background: linear-gradient(135deg, #F7C6C7 0%, #F4C430 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-        }
-
-        /* ふわふわ動くアイコン */
-        .floating-paw {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-            100% { transform: translateY(0px) rotate(0deg); }
-        }
-    </style>
     <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-bg-main pt-16">
+<body class="bg-bg-main pt-16 font-zen-maru">
     <!-- Navigation Header -->
     <nav id="main-nav"
         class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300">
