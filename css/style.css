@@ -128,6 +128,29 @@ body {
     font-size: 1.5rem;
 }
 
+.skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.skill-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+    color: var(--text-main, #6E5C4F);
+}
+
+.skill-stars {
+    color: var(--primary, #A47148);
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
 .project-detail-section {
     border-left: 3px solid #A47148;
     padding-left: 1.5rem;

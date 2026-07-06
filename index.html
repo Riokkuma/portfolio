@@ -298,6 +298,26 @@
                 </h2>
             </div>
 
+            <div class="bg-primary/5 rounded-2xl p-6 mb-10 border-2 border-primary/20">
+                <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                    <span>🐻</span> 星評価の目安
+                </h3>
+                <div class="grid gap-3 text-sm text-text-main">
+                    <div class="flex items-center gap-2">
+                        <span class="skill-stars">★☆☆</span>
+                        <span>AIやツールを使いながら触れたことがある</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="skill-stars">★★☆</span>
+                        <span>触れたことがあり、基本操作や仕組みが分かる</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="skill-stars">★★★</span>
+                        <span>演習で扱い、一人で基本操作から応用・実践レベルまでできる</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- プログラミング言語 -->
                 <div class="bg-card-bg rounded-2xl p-8 shadow-lg border-2 border-primary/20">
@@ -305,17 +325,17 @@
                         <span>🐍</span> プログラミング言語
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Python</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Python</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">JavaScript</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>JavaScript</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Node.js</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Node.js</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
                     </div>
                 </div>
@@ -326,21 +346,21 @@
                         <span>🌐</span> Web開発
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">HTML/CSS</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>HTML/CSS</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Express</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Express</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">EJS</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>EJS</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">RESTful API</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>RESTful API</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
                     </div>
                 </div>
@@ -351,17 +371,17 @@
                         <span>💾</span> データベース
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">MySQL</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>MySQL</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">SQLite3</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>SQLite3</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Prisma (ORM)</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Prisma (ORM)</span>
+                            <span class="skill-stars" aria-label="3段階中1">★☆☆</span>
                         </div>
                     </div>
                 </div>
@@ -372,17 +392,17 @@
                         <span>☁️</span> クラウド・インフラ
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">AWS (EC2, S3, Lambda)</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>AWS (EC2, S3, Lambda)</span>
+                            <span class="skill-stars" aria-label="3段階中1">★☆☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Linux</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Linux</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Apache</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Apache</span>
+                            <span class="skill-stars" aria-label="3段階中1">★☆☆</span>
                         </div>
                     </div>
                 </div>
@@ -393,17 +413,17 @@
                         <span>🤖</span> IoT・組み込み
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">Raspberry Pi</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>Raspberry Pi</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">センサー制御</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>センサー制御</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">GPIO/I2C/PWM</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>GPIO/I2C/PWM</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
                     </div>
                 </div>
@@ -414,17 +434,17 @@
                         <span>📐</span> 設計・開発手法
                     </h3>
                     <div class="space-y-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">UML (8種類)</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>UML (8種類)</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">アジャイル開発</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>アジャイル開発</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">PMBOK</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>PMBOK</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
                     </div>
                 </div>
@@ -436,29 +456,29 @@
                         <span>✨</span> その他
                     </h3>
                     <div class="grid md:grid-cols-3 gap-4">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">モバイルアプリ開発</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>モバイルアプリ開発</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">ロボティクス開発</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>ロボティクス開発</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">RPA</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>RPA</span>
+                            <span class="skill-stars" aria-label="3段階中1">★☆☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">CAD (Onshape)</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>CAD (Onshape)</span>
+                            <span class="skill-stars" aria-label="3段階中3">★★★</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">セキュリティ対策</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>セキュリティ対策</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl">🐻</span>
-                            <span class="text-text-main">AI/機械学習</span>
+                        <div class="skill-row">
+                            <span class="skill-label"><span class="text-2xl">🐻</span>AI/機械学習</span>
+                            <span class="skill-stars" aria-label="3段階中2">★★☆</span>
                         </div>
                     </div>
                 </div>
