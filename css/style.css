@@ -80,6 +80,10 @@
     animation: fadeInUp 1s ease-out backwards;
 }
 
+.animation-delay-500 {
+    animation-delay: 0.5s;
+}
+
 .bounce-slow {
     animation: bounce-slow 3s ease-in-out infinite;
 }
