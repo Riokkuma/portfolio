@@ -485,4 +485,81 @@ img {
     -ms-user-select: none;
 }
 
+/* ==========================================================================
+   🐻 抽出ギミック 1: スクロール進捗ゲージ ＋ 歩くクマ (Walking Bear Progress Bar)
+   ========================================================================== */
+#bear-scroll-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* くまが小さくなったのでバーも調整したよ🐻 */
+    background: rgba(226, 199, 169, 0.4);
+    border-bottom: 2px solid rgba(164, 113, 72, 0.15);
+    z-index: 1000;
+    pointer-events: none;
+}
 
+#bear-scroll-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #E2C7A9 0%, #F4CDD5 50%, #A47148 100%);
+    border-radius: 0 8px 8px 0;
+    transition: width 0.1s linear;
+}
+
+#walking-bear-wrapper {
+    position: fixed;
+    top: 1px; /* バーの中にくまをしっかり収めるよ🐻 */
+    left: 0%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    pointer-events: none;
+    transition: left 0.1s linear;
+}
+
+.walking-bear-svg {
+    width: 44px;  /* バーに収まるサイズに調整🐻 */
+    height: 28px;
+    /* scaleXリバースなし！SVGから直接右向きに描くよ🐻 */
+    filter: drop-shadow(0 3px 6px rgba(74, 58, 49, 0.3));
+}
+
+/* スクロール中に足を動かすアニメーション */
+.is-scrolling .walking-bear-leg-left {
+    animation: bear-walk-leg 0.3s ease-in-out infinite alternate;
+}
+.is-scrolling .walking-bear-leg-right {
+    animation: bear-walk-leg 0.3s ease-in-out infinite alternate-reverse;
+}
+.is-scrolling .walking-bear-body {
+    animation: bear-walk-bob 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes bear-walk-leg {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-2px) rotate(12deg); }
+}
+
+@keyframes bear-walk-bob {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-1.5px); }
+}
+
+/* ==========================================================================
+   🐻 抽出ギミック 2: マウスを目で追うクマ (Follow Bear)
+   ========================================================================== */
+.follow-bear-container {
+    display: inline-block;
+    position: relative;
+}
+
+.follow-bear-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.follow-bear-pupil {
+    transition: transform 0.05s ease-out;
+}
