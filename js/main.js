@@ -37,13 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.scrollY;
 
         if (nav) {
-            // Shadow on scroll
-            if (currentScrollY > 50) {
-                nav.classList.add('shadow-lg', 'py-2');
-                nav.classList.remove('py-4');
+            // Shadow on scroll - 高さは固定したまま影のみを切り替えてブレを防止
+            if (currentScrollY > 20) {
+                nav.classList.add('shadow-md');
             } else {
-                nav.classList.remove('shadow-lg', 'py-2');
-                nav.classList.add('py-4');
+                nav.classList.remove('shadow-md');
             }
 
             // スクロールしても常にナビを表示し続けるよ🐻
@@ -69,29 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Intersection Observer for Scroll Reveal ---
-    // クマの修正：スマホで見えなくなるバグを防ぐため、フワッと表示するアニメーションを完全に停止し、
-    // 最初からすべてのコンテンツが確実に見えるようにしました🐻
-    document.querySelectorAll('section, header, footer').forEach(el => {
-        el.style.opacity = '1';
-    });
-
-    // 🐻 画像の簡単保存防止（右クリック禁止・ドラッグ禁止） 🐾
-    document.querySelectorAll('img').forEach(img => {
-        // 右クリックで「名前を付けて保存」メニューが出るのを防ぐよ
-        img.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
+    // メインスレッドの強制リフロー（Forced Reflow）を防ぐため、初期描画後に非同期で安全に実行
+    const initDeferredFeatures = () => {
+        // 🐻 画像の簡単保存防止（右クリック禁止・ドラッグ禁止） 🐾
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('contextmenu', (e) => e.preventDefault());
+            img.addEventListener('dragstart', (e) => e.preventDefault());
         });
-        // ドラッグ開始をJavaScriptでもしっかり禁止するよ
-        img.addEventListener('dragstart', (e) => {
-            e.preventDefault();
-        });
-    });
-    // --- 🐻 抽出ギミック 1: スクロールゲージを歩くクマ (Walking Bear) ---
-    initWalkingBear();
 
-    // --- 🐻 抽出ギミック 2: マウスを目で追うクマ (Follow Bear) ---
-    initFollowBear();
+        // 🐻 抽出ギミック 1: スクロールゲージを歩くクマ
+        initWalkingBear();
+
+        // 🐻 抽出ギミック 2: マウスを目で追うクマ
+        initFollowBear();
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(initDeferredFeatures, { timeout: 1000 });
+    } else {
+        requestAnimationFrame(initDeferredFeatures);
+    }
 });
 
 

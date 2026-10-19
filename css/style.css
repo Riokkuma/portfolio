@@ -1,3 +1,9 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* 80px: ナビゲーション固定バー(h-16=64px)と適度な余白分 */
+    overflow-y: scroll; /* スクロールバー有無による横ブレ防止 */
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

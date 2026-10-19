@@ -35,7 +35,10 @@
     <meta name="twitter:title" content="Riokkuma - Portfolio">
     <meta name="twitter:description" content="デザインと開発でユーザーに寄り添うものづくりを。Riokkumaの活動を紹介します。">
     <meta name="twitter:url" content="https://riokkuma.github.io/portfolio/">
-    <meta name="twitter:image" content="https://riokkuma.github.io/portfolio/photo/photo1.jpg">
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind-config.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -52,13 +55,9 @@
                 <a href="#about" class="bear-nav-btn text-sm lg:text-base px-2">About</a>
                 <a href="#qualifications" class="bear-nav-btn text-sm lg:text-base px-2">Qualifications</a>
                 <a href="#skills" class="bear-nav-btn text-sm lg:text-base px-2">Skills</a>
-                <a href="school.html" class="bear-nav-btn text-primary font-bold text-sm lg:text-base px-2">School
-                    🏫</a>
-                <!-- Activities → foreign-internship.html に直接リンク（school.htmlと同じ挙動）-->
-                <a href="foreign-internship.html" class="bear-nav-btn text-sm lg:text-base px-2">Activities</a>
                 <a href="#projects" class="bear-nav-btn text-sm lg:text-base px-2">Projects</a>
-                <!-- Creative：Photoshop・Premiere Proのクリエイティブページへのリンク -->
-                <a href="creative.html" class="bear-nav-btn text-sm lg:text-base px-2">Creative 🎨</a>
+                <a href="#activities" class="bear-nav-btn text-sm lg:text-base px-2">Activities</a>
+                <a href="#contact" class="bear-nav-btn text-sm lg:text-base px-2">Contact</a>
             </div>
             <button id="mobile-menu-btn"
                 class="md:hidden text-dark p-2 hover:bg-primary/10 rounded-full transition-colors" aria-label="メニューを開く">
@@ -87,37 +86,31 @@
         <div class="absolute bottom-10 right-10 text-7xl bear-decoration wiggle">🐻</div>
         <div class="absolute bottom-20 left-20 text-5xl bear-decoration float" style="animation-delay: 1s;">🐾</div>
 
-        <!-- ナビゲーションリンク -->
-        <nav class="flex flex-col gap-8 text-center menu-content">
+        <!-- ナビゲーションリンク（統一されたページ内セクションへのリンク） -->
+        <nav class="flex flex-col gap-6 text-center menu-content">
             <a href="#about"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> About
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> About
             </a>
             <a href="#qualifications"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> Qualifications
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> Qualifications
             </a>
             <a href="#skills"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> Skills
-            </a>
-            <a href="school.html"
-                class="mobile-nav-link text-3xl font-bold text-primary hover:text-dark transition-colors flex items-center justify-center gap-3 border-b-2 border-primary/30 pb-2">
-                <span class="menu-paw text-accent-pink text-2xl">🐾</span> School 🏫
-            </a>
-            <!-- モバイル Activities → foreign-internship.html に直接リンク -->
-            <a href="foreign-internship.html"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> Activities 🐾
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> Skills
             </a>
             <a href="#projects"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> Projects
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> Projects
             </a>
-            <!-- Creative：Photoshop・Premiere Proのクリエイティブページへのリンク -->
-            <a href="creative.html"
-                class="mobile-nav-link text-3xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
-                <span class="menu-paw text-primary text-2xl">🐾</span> Creative 🎨
+            <a href="#activities"
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> Activities
+            </a>
+            <a href="#contact"
+                class="mobile-nav-link text-2xl font-bold text-dark hover:text-primary transition-colors flex items-center justify-center gap-3">
+                <span class="menu-paw text-primary text-xl">🐾</span> Contact
             </a>
         </nav>
     </div>
@@ -142,20 +135,19 @@
                 </div>
             </div>
 
-            <h1 class="text-7xl md:text-8xl font-bold mb-6 text-dark title-font fade-in-up relative z-10">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-bold mb-4 text-dark title-font fade-in-up relative z-10 tracking-tight">
                 Riokkuma
             </h1>
 
-            <p class="text-3xl md:text-4xl text-primary mb-4 fade-in-up relative z-10" style="animation-delay: 0.2s;">
-                リオックマ 🧸ᩚ
+            <p class="text-xl sm:text-2xl md:text-3xl text-primary font-bold mb-3 fade-in-up relative z-10" style="animation-delay: 0.2s;">
+                リオックマ 🧸
             </p>
 
-            <p class="text-xl text-text-main max-w-2xl mb-4 fade-in-up relative z-10" style="animation-delay: 0.4s;">
-                PR・クリエイティブ制作 | 高度専門士情報技術科 | リオックマ 🐾
+            <p class="text-sm sm:text-base md:text-lg text-text-main max-w-xl mx-auto mb-4 fade-in-up relative z-10 px-4 leading-relaxed" style="animation-delay: 0.3s;">
+                高度専門士情報技術科 | PR・クリエイティブ制作 🐾
             </p>
 
-            <p
-                class="text-base md:text-lg text-text-main/90 max-w-2xl mb-12 fade-in-up animation-delay-500 relative z-10">
+            <p class="text-xs sm:text-sm md:text-base text-text-main/80 max-w-xl mx-auto mb-8 sm:mb-10 fade-in-up animation-delay-500 relative z-10 px-4 leading-relaxed">
                 IT・デザイン・発信の経験を活かし、ユーザーに寄り添った課題解決に取り組んでいます。
             </p>
 
@@ -169,7 +161,7 @@
                     <span class="font-medium text-text-main">@Veronica_kuma</span>
                 </a>
 
-                <a href="https://t.co/HwPDDfO0cZ" target="_blank" rel="noopener noreferrer"
+                <a href="https://lipscosme.com/users/n/@veronica_kuma?_t=gx8g&_r=A4G8Xg" target="_blank" rel="noopener noreferrer"
                     class="flex items-center gap-2 px-6 py-3 bg-card-bg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 border-2 border-accent-pink">
                     <svg class="w-5 h-5 text-accent-pink" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -190,8 +182,8 @@
         </header>
 
         <!-- About Section -->
-        <section id="about" class="mb-32 scroll-mt-24">
-            <div class="bg-card-bg rounded-3xl p-12 shadow-xl border-2 border-primary/20">
+        <section id="about" class="mb-20 md:mb-32 scroll-mt-24">
+            <div class="bg-card-bg rounded-3xl p-6 md:p-12 shadow-xl border-2 border-primary/20">
                 <div class="flex items-center gap-3 mb-8">
                     <span class="text-4xl" aria-hidden="true">🌟</span>
                     <h2 class="text-4xl font-bold text-dark title-font">
@@ -204,13 +196,13 @@
                     <!-- 写真1 -->
                     <figure
                         class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
-                        <img src="photo/photo1.jpg" alt="仕事に打ち込むVeronicaの様子"
+                        <img src="photo/photo1.jpg" alt="仕事に打ち込むVeronicaの様子" width="480" height="480" loading="lazy" decoding="async"
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </figure>
                     <!-- 写真2 -->
                     <figure
                         class="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:border-primary/40 transition-all">
-                        <img src="photo/photo2.jpg" alt="クリエイティブな活動中のVeronica"
+                        <img src="photo/photo2.jpg" alt="クリエイティブな活動中のVeronica" width="480" height="480" loading="lazy" decoding="async"
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </figure>
                 </div>
@@ -462,7 +454,7 @@
 
             <!-- 🎯 プロジェクト 1：半自動メイクブラシ洗浄ロボット -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">半自動メイクブラシ洗浄ロボット 🤖</h3>
 
@@ -544,7 +536,7 @@
 
             <!-- 🎯 プロジェクト 2：モバイルアプリ UXデザイン -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">モバイルアプリ UXデザイン 📱</h3>
@@ -643,7 +635,7 @@
 
             <!-- 🎯 プロジェクト 3：美容垢SNS運用 -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">美容垢 SNS運用 💄</h3>
@@ -737,7 +729,7 @@
 
             <!-- 🎯 プロジェクト 4：学生スタッフ（学スタ）活動 -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- ✏️ プロジェクトタイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">学生スタッフ（学スタ）活動 🏫</h3>
@@ -764,7 +756,7 @@
                                     href="https://github.com/Riokkuma/trial-lesson-share" target="_blank"
                                     rel="noopener noreferrer"
                                     class="inline-flex items-center gap-1 text-primary hover:underline font-bold bg-primary/10 px-2.5 py-1 rounded-lg transition-colors">GitHubで見る
-                                    💻</a> <span class="text-xs text-text-main/70">（※実際に体験授業で実演・使用したコードです）</span></div>
+                                    💻</a> <span class="text-xs text-text-main/90 font-medium">（※実際に体験授業で実演・使用したコードです）</span></div>
                         </div>
                     </div>
 
@@ -773,8 +765,8 @@
                         <a href="https://x.com/ITWEB15/status/2043217780858904771?s=20" target="_blank"
                             rel="noopener noreferrer"
                             class="block rounded-2xl overflow-hidden shadow-lg border-2 border-primary/20 hover:scale-[1.01] hover:border-primary/45 transition-all duration-300">
-                            <img src="photo/OC3.png" alt="体験授業ライブコーディングの様子" class="w-full h-64 object-cover">
-                            <p class="text-xs text-center text-text-main/70 py-2 bg-primary/5 font-bold">📢
+                            <img src="photo/OC3.png" alt="体験授業ライブコーディングの様子" width="588" height="427" loading="lazy" decoding="async" class="w-full h-64 object-cover">
+                            <p class="text-xs text-center text-text-main py-2 bg-primary/5 font-bold">📢
                                 体験授業ライブコーディングの公式Xポストを見る 🐾</p>
                         </a>
                     </div>
@@ -813,7 +805,7 @@
                     </h4>
                     <ul class="text-text-main leading-relaxed space-y-2">
                         <li>• 来校者アンケートで「学生スタッフの対応が良かった」と非常に高い評価を獲得</li>
-                        <li>• ライブコーディングデモが好評を博し、学校公式X（Twitter）でもその様子が紹介される 📱</li>
+                        <li>• 学校公式X（Twitter）でもその様子が紹介される 📱</li>
                         <li>• 学外の高校生へのPR活動で活用される</li>
                         <li>• スタディサプリ進路などの外部メディアにてインタビュー記事が掲載され、学校のブランディングに貢献 🏆</li>
                     </ul>
@@ -835,7 +827,7 @@
                 <!-- ✏️ リンクボタン -->
                 <!-- クマの耳が出るアニメーションを適用 🐻 -->
                 <a href="school.html" class="bear-btn bear-btn-primary mt-4">
-                    学校紹介 ＆ 学スタ活動を見る 🏫
+                    詳しく見る (学校紹介 ＆ 学スタ活動) 🏫
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -846,7 +838,7 @@
 
             <!-- 🎯 プロジェクト 5：Creative Works（Photoshop × Premiere Pro） -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl mb-12 border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <!-- タイトル -->
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">Creative Works 🎨</h3>
@@ -957,7 +949,7 @@
 
             <!-- 🎯 海外研修（アメリカ西海岸） -->
             <div
-                class="bg-card-bg rounded-3xl p-10 shadow-xl border-2 border-primary/20 hover:border-primary/40 transition-all">
+                class="bg-card-bg rounded-3xl p-6 md:p-10 shadow-xl border-2 border-primary/20 hover:border-primary/40 transition-all">
                 <div class="mb-8">
                     <h3 class="text-3xl font-bold text-dark mb-4">海外研修（アメリカ西海岸 8泊10日） 🌏✈️</h3>
 
@@ -1027,15 +1019,15 @@
         <!-- Contact Section（no-reveal：IntersectionObserverによるopacity:0でクリックブロックを防ぐ） -->
         <section class="mb-16">
             <div
-                class="bg-gradient-to-br from-accent-pink/30 to-accent-yellow/30 rounded-3xl p-12 text-center shadow-xl border-2 border-primary/30">
-                <span class="text-6xl mb-6 inline-block">✉️</span>
-                <h2 class="text-4xl font-bold text-dark mb-6 title-font">
+                class="bg-gradient-to-br from-accent-pink/30 to-accent-yellow/30 rounded-3xl p-6 md:p-12 text-center shadow-xl border-2 border-primary/30">
+                <span class="text-5xl md:text-6xl mb-4 md:mb-6 inline-block">✉️</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 md:mb-6 title-font">
                     Let's Connect!
                 </h2>
                 <!-- no-reveal：透明なまま残ってクリックブロックしないよう制御 -->
-                <section id="contact" class="mb-32 scroll-mt-24">
+                <section id="contact" class="mb-8 md:mb-32 scroll-mt-24">
                     <div
-                        class="bg-gradient-to-br from-primary to-dark rounded-3xl p-12 text-center text-card-bg shadow-2xl relative overflow-hidden">
+                        class="bg-gradient-to-br from-primary to-dark rounded-3xl p-6 md:p-12 text-center text-card-bg shadow-2xl relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                             <div class="bear-decoration text-9xl -top-10 -left-10 rotate-12">🧸</div>
                             <div class="bear-decoration text-9xl -bottom-10 -right-10 -rotate-12">🧸</div>
@@ -1085,7 +1077,7 @@
             </div>
             <!-- Last Updated -->
             <p
-                class="title-font italic text-sm tracking-widest text-[#C9B39B] opacity-90 inline-flex items-center justify-center gap-2">
+                class="title-font italic text-sm tracking-widest text-[#E2C7A9] font-medium inline-flex items-center justify-center gap-2">
                 <span>Last Updated: September 14, 2026</span>
                 <span class="not-italic text-sm">🐾</span>
             </p>
