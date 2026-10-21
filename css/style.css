@@ -1,3 +1,13 @@
+:root {
+    --color-primary: #8C5429;
+    --color-primary-hover: #6F4120;
+    --color-secondary: #D4A373;
+    --color-bg-sub: #EEDCC6;
+    --color-bg-card: #FFF9F4;
+    --color-dark: #5C4033;
+    --color-text-main: #5A4638;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* 80px: ナビゲーション固定バー(h-16=64px)と適度な余白分 */
@@ -182,11 +192,6 @@ body {
     position: absolute;
     opacity: 0.15;
     pointer-events: none;
-}
-
-/* Base Scroll Behavior */
-html {
-    scroll-behavior: smooth;
 }
 
 /* 🐻 クマ型ボタン（共通） */

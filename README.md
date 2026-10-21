@@ -100,6 +100,10 @@ portfolio/
 ├── creative.html               # クリエイティブ（Photoshop/Premiere Pro）詳細
 ├── css/
 │   └── style.css               # カスタムアニメーション・基本スタイル
+├── docs/
+│   ├── ARCHITECTURE.md         # 実装仕様・アーキテクチャ設計書
+│   ├── GUIDE.md                # 総合運用・更新マニュアル
+│   └── ROBOT-IMAGE-GUIDE.md    # ロボット詳細ページ画像配置ガイド
 ├── js/
 │   ├── main.js                 # ナビゲーション制御・クマギミック
 │   └── tailwind-config.js      # テーマカラー・デザインシステム定義

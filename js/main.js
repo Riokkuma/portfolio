@@ -32,8 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Navigation and Scroll logic
-    window.addEventListener('scroll', () => {
+    // Navigation and Scroll logic (rAFスロットルで最適化 🐻🐾)
+    let isScrollTicking = false;
+
+    const onScroll = () => {
         const currentScrollY = window.scrollY;
 
         if (nav) {
@@ -58,7 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         lastScrollY = currentScrollY;
-    });
+        isScrollTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!isScrollTicking) {
+            window.requestAnimationFrame(onScroll);
+            isScrollTicking = true;
+        }
+    }, { passive: true });
 
     if (backToTop) {
         backToTop.addEventListener('click', (e) => {
@@ -142,8 +152,9 @@ function initWalkingBear() {
 
     const scrollBar = document.getElementById('bear-scroll-bar');
     let scrollTimeout = null;
+    let isProgressTicking = false;
 
-    const updateScrollProgress = () => {
+    const renderScrollProgress = () => {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = scrollHeight > 0 ? Math.min(1, Math.max(0, scrollTop / scrollHeight)) : 0;
@@ -164,10 +175,19 @@ function initWalkingBear() {
                 wrapper.classList.remove('is-scrolling');
             }
         }, 150);
+
+        isProgressTicking = false;
+    };
+
+    const updateScrollProgress = () => {
+        if (!isProgressTicking) {
+            window.requestAnimationFrame(renderScrollProgress);
+            isProgressTicking = true;
+        }
     };
 
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
-    updateScrollProgress();
+    renderScrollProgress();
 }
 
 /**
