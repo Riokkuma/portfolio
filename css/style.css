@@ -284,6 +284,11 @@ html {
     background-color: #A47148;
 }
 
+/* 白背景のクマボタン（About Meなど）もホバー時に背景を付け、白文字が消えないようにする */
+.bear-btn:not(.bear-btn-primary):hover {
+    background-color: #A47148;
+}
+
 .bear-btn:hover::before,
 .bear-nav-btn:hover::before {
     transform: translateX(-4px) rotate(-25deg);
