@@ -308,6 +308,9 @@ html {
 
 /* 📱 スマホ用ハンバーガーメニュー画面 */
 #mobile-menu {
+    /* 初期状態はCSS側でも隠しておき、ページ表示直後に一瞬見えるのを防ぐ */
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
