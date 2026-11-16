@@ -26,8 +26,8 @@
   <meta property="og:image" content="https://riokkuma.github.io/portfolio/photo/photo1.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:updated_time" content="2026-10-26T00:00:00+09:00">
-  <meta property="article:modified_time" content="2026-10-26T00:00:00+09:00">
+  <meta property="og:updated_time" content="2026-11-16T00:00:00+09:00">
+  <meta property="article:modified_time" content="2026-11-16T00:00:00+09:00">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -40,12 +40,33 @@
   <script src="js/tailwind-config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Yomogi&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 美容SNS運用ページ専用スタイル（他ページへの影響防止） */
+    body.beauty-sns-page {
+      font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .beauty-sns-page h1,
+    .beauty-sns-page h2,
+    .beauty-sns-page h3,
+    .beauty-sns-page h4,
+    .beauty-sns-page .heading-font {
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+    .beauty-sns-page .accent-yomogi {
+      font-family: 'Yomogi', cursive, sans-serif;
+    }
+    .beauty-sns-stat-number {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-feature-settings: "palt";
+    }
+  </style>
   <script src="js/main.js" defer></script>
 </head>
 
-<body class="bg-bg-main text-text-main font-yomogi">
+<body class="bg-bg-main text-text-main beauty-sns-page overflow-x-hidden">
   <nav id="main-nav"
     class="fixed top-0 left-0 w-full z-50 bg-[#EEDCC6]/90 backdrop-blur-md border-b border-primary/20 transition-transform duration-300 no-reveal">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -120,49 +141,124 @@
     </nav>
   </div>
 
-  <main class="max-w-6xl mx-auto px-6 pt-32 pb-24">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-16 sm:pb-24">
 
     <!-- 
     ═══════════════════════════════════════════════════════════════
-    🌸 ヒーローセクション
+    🌸 ヒーローセクション（ファーストビュー）
     ═══════════════════════════════════════════════════════════════
     -->
     <div
-      class="mb-12 bg-gradient-to-br from-accent-pink/30 via-accent-purple/20 to-accent-yellow/30 rounded-3xl p-6 sm:p-12 shadow-2xl border-2 border-primary/20 relative overflow-hidden">
+      class="mb-8 sm:mb-12 bg-gradient-to-br from-accent-pink/30 via-accent-purple/20 to-accent-yellow/30 rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 shadow-xl sm:shadow-2xl border-2 border-primary/20 relative overflow-hidden">
       <!-- 装飾的な要素 -->
-      <div class="absolute top-4 right-4 text-6xl opacity-20 float-animation">💄</div>
-      <div class="absolute bottom-4 left-4 text-5xl opacity-20 float-animation" style="animation-delay: 0.5s;">✨</div>
-      <div class="absolute top-1/2 left-1/4 text-4xl opacity-15 sparkle">💖</div>
+      <div class="absolute top-3 right-3 sm:top-4 sm:right-4 text-4xl sm:text-6xl opacity-20 float-animation pointer-events-none" aria-hidden="true">💄</div>
+      <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-3xl sm:text-5xl opacity-20 float-animation pointer-events-none" style="animation-delay: 0.5s;" aria-hidden="true">✨</div>
+      <div class="absolute top-1/2 left-1/4 text-2xl sm:text-4xl opacity-15 sparkle pointer-events-none" aria-hidden="true">💖</div>
 
       <div class="relative z-10">
-        <h1 class="text-4xl sm:text-5xl font-bold text-dark mb-4 flex items-center gap-3">
-          美容垢 SNS運用
-          <span class="text-5xl sm:text-6xl">💄</span>
+        <!-- 🎯 志望が分かる1行 -->
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/90 border border-primary/30 rounded-full text-xs sm:text-sm font-bold text-primary mb-2 sm:mb-2.5 shadow-sm">
+          <span>🎯</span>
+          <span>加藤 吏恩 ｜ Webマーケティング志望（SNS運用・コンテンツ運用改善）</span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold text-dark mb-1 flex flex-wrap items-center gap-2">
+          <span>美容SNS運用</span>
+          <span class="text-xl sm:text-3xl text-primary font-normal accent-yomogi">Veronica ヴェロニカ 🧸ᩚ</span>
+          <span class="text-2xl sm:text-4xl">💄</span>
         </h1>
-        <p class="text-xl sm:text-2xl text-primary mb-6">
-          Veronica ヴェロニカ 🧸ᩚ
-        </p>
-        <p class="text-base sm:text-lg text-text-main mb-8 leading-relaxed max-w-3xl">
-          X（Twitter）とLIPSでコスメレビューやメイク情報を発信しています。
-          写真撮影からコンテンツ制作まで、SNS運用を実践中✨
+
+        <p class="text-xs sm:text-sm text-primary font-bold mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-[11px] sm:text-xs">運用歴2年以上（2024年9月開始）</span>
+          <span>X: @Veronica_kuma</span>
+          <span>・</span>
+          <span>LIPS: @veronica_kuma</span>
         </p>
 
+        <!-- 本人の軸・誠実なレビュー・AI役割分担 -->
+        <p class="text-xs sm:text-sm md:text-base text-text-main mb-3 leading-relaxed max-w-3xl">
+          本人の軸は「試して、直して、続けて育てる」。メリットとデメリットの両方を正直に書く姿勢を大切に、一次情報の実体験レビューを発信しています。AIは下書き・案出しに活用し、企画・情報確認・表現の調整・最終検品は本人が担当して継続的に改善を行っています。
+        </p>
+
+        <!-- 📊 実績数字カード（強い順に配置・スマホの最初の画面に収まるグリッド） -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-3.5 sm:mb-4">
+          <!-- ① 累計いいね数 -->
+          <div class="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-primary/20 shadow-sm flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] sm:text-xs font-bold text-primary flex items-center gap-1 mb-0.5">
+                <span>💖</span> 累計いいね数
+              </p>
+              <p class="text-lg sm:text-2xl font-bold text-dark beauty-sns-stat-number leading-tight">
+                10,538<span class="text-xs sm:text-sm font-semibold ml-0.5">件</span>
+              </p>
+            </div>
+            <p class="text-[9px] sm:text-[11px] text-text-main/80 mt-1 pt-1 border-t border-primary/10 leading-tight">
+              オリジナル928件（'24.9〜'26.10）
+            </p>
+          </div>
+
+          <!-- ② 最多反響（単一投稿） -->
+          <div class="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-primary/20 shadow-sm flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] sm:text-xs font-bold text-primary flex items-center gap-1 mb-0.5">
+                <span>🔥</span> 最多反響（単一投稿）
+              </p>
+              <p class="text-lg sm:text-2xl font-bold text-dark beauty-sns-stat-number leading-tight">
+                2,237<span class="text-xs sm:text-sm font-semibold ml-0.5">いいね</span>
+              </p>
+            </div>
+            <p class="text-[9px] sm:text-[11px] text-text-main/80 mt-1 pt-1 border-t border-primary/10 leading-tight">
+              日焼け止め比較（検証・比較）
+            </p>
+          </div>
+
+          <!-- ③ PR投稿・リピート実績 -->
+          <div class="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-primary/20 shadow-sm flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] sm:text-xs font-bold text-primary flex items-center gap-1 mb-0.5">
+                <span>🤝</span> PR投稿・リピート実績
+              </p>
+              <p class="text-lg sm:text-2xl font-bold text-dark beauty-sns-stat-number leading-tight">
+                36<span class="text-xs sm:text-sm font-semibold ml-0.5">件</span> <span class="text-[11px] sm:text-xs text-primary font-bold">/ 4回リピート</span>
+              </p>
+            </div>
+            <p class="text-[9px] sm:text-[11px] text-text-main/80 mt-1 pt-1 border-t border-primary/10 leading-tight">
+              同一企業から4回継続依頼
+            </p>
+          </div>
+
+          <!-- ④ フォロワー数 -->
+          <div class="bg-white/90 backdrop-blur-sm rounded-xl p-2.5 sm:p-3 border border-primary/20 shadow-sm flex flex-col justify-between">
+            <div>
+              <p class="text-[10px] sm:text-xs font-bold text-primary flex items-center gap-1 mb-0.5">
+                <span>👥</span> 総フォロワー数
+              </p>
+              <p class="text-lg sm:text-2xl font-bold text-dark beauty-sns-stat-number leading-tight">
+                993<span class="text-xs sm:text-sm font-semibold ml-0.5">人</span>
+              </p>
+            </div>
+            <p class="text-[9px] sm:text-[11px] text-text-main/80 mt-1 pt-1 border-t border-primary/10 leading-tight">
+              X 560人 / LIPS 433人（2026年11月16日時点）
+            </p>
+          </div>
+        </div>
+
         <!-- SNSリンク -->
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-2.5 sm:gap-4">
           <a href="https://twitter.com/Veronica_kuma" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:scale-105 transition-all shadow-lg">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            class="inline-flex items-center gap-1.5 px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:scale-105 transition-all shadow-md text-xs sm:text-sm font-bold">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            X (Twitter)
+            X (@Veronica_kuma)
           </a>
 
           <a href="https://lipscosme.com/users/n/@veronica_kuma?_t=gx8g&_r=A4G8Xg" target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full hover:scale-105 transition-all shadow-lg">
-            <span class="text-xl">💄</span>
-            LIPS
+            class="inline-flex items-center gap-1.5 px-4 py-2 sm:px-6 sm:py-2.5 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full hover:scale-105 transition-all shadow-md text-xs sm:text-sm font-bold">
+            <span class="text-base sm:text-lg">💄</span>
+            LIPS (@veronica_kuma)
           </a>
         </div>
       </div>
@@ -189,26 +285,30 @@
           <p class="text-dark font-bold">LIPS（@veronica_kuma）</p>
         </div>
         <div class="bg-white rounded-xl p-5 border border-primary/10 md:col-span-2">
-          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">運用目的</p>
-          <p class="text-dark">本人撮影と実体験に基づき、コスメやスキンケアの使用感を誠実に伝える。学業と無理なく両立できる継続可能な運用体制を構築する。</p>
+          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">運用目的・本人の軸</p>
+          <p class="text-dark">「試して、直して、続けて育てる」を軸に、本人撮影と実体験に基づきコスメやスキンケアの使用感を誠実に発信。メリットだけでなくデメリットも正直に伝えることで読者・企業双方からの信頼を獲得し、学業と無理なく両立できる継続可能な運用体制を構築する。</p>
         </div>
         <div class="bg-white rounded-xl p-5 border border-primary/10 md:col-span-2">
-          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">担当範囲</p>
-          <p class="text-dark">企画、商品使用・撮影、文章作成、投稿、コメント対応（可能な範囲で返信）、数値記録、分析</p>
+          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">担当範囲・AI活用分担</p>
+          <p class="text-dark">企画、商品選定・使用・撮影、情報確認、表現調整、最終検品・投稿、コメント対応、数値記録・分析を本人が担当。AIは下書き作成・アイデア出し・壁打ちの補助として活用。</p>
         </div>
         <div class="bg-white rounded-xl p-5 border border-primary/10">
-          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">プロジェクト期間</p>
-          <p class="text-dark">2026年9月14日 〜 2027年1月18日</p>
+          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">アカウント開始・運用歴</p>
+          <p class="text-dark font-bold">2024年9月開始（運用歴2年以上）</p>
         </div>
         <div class="bg-white rounded-xl p-5 border border-primary/10">
+          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">学校演習プロジェクト期間</p>
+          <p class="text-dark">2026年9月14日 〜 2027年1月18日（学校のPM実践演習での検証期間）</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-primary/10 md:col-span-2">
           <p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">投稿頻度</p>
-          <p class="text-dark">週1回を最低ラインとして継続的に発信</p>
+          <p class="text-dark">週1回を最低ラインとして継続的に発信（オリジナル投稿累計928件）</p>
         </div>
       </div>
 
       <!-- フォロワー数の推移 -->
       <h3 class="font-bold text-dark mb-4 flex items-center gap-2">
-        <span>📈</span> フォロワー数の推移（2026年9月14日 〜 2026年10月26日）
+        <span>📈</span> フォロワー数の推移（2026年9月14日 〜 2026年11月16日時点）
       </h3>
       <div class="grid sm:grid-cols-2 gap-4 mb-8">
         <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
@@ -218,8 +318,8 @@
             </svg>
             <span class="font-bold text-blue-900">X（主軸）</span>
           </div>
-          <p class="text-2xl font-bold text-blue-800 mb-1">514 → 559人</p>
-          <p class="text-sm text-blue-700 font-semibold">+45人増加（測定期間内）</p>
+          <p class="text-2xl font-bold text-blue-800 mb-1">514 → 560人</p>
+          <p class="text-sm text-blue-700 font-semibold">+46人増加（測定期間内 / 2026年11月16日時点）</p>
           <p class="text-xs text-blue-600 mt-2 border-t border-blue-200 pt-2">目標：1,000人（2027年1月18日まで）</p>
         </div>
         <div class="bg-gradient-to-br from-pink-50 to-red-100 rounded-xl p-6 border border-pink-200">
@@ -227,16 +327,18 @@
             <span class="text-2xl">💄</span>
             <span class="font-bold text-pink-900">LIPS（補助）</span>
           </div>
-          <p class="text-2xl font-bold text-pink-800 mb-1">412 → 427人</p>
-          <p class="text-sm text-pink-700 font-semibold">+15人増加（測定期間内）</p>
+          <p class="text-2xl font-bold text-pink-800 mb-1">412 → 433人</p>
+          <p class="text-sm text-pink-700 font-semibold">+21人増加（測定期間内 / 2026年11月16日時点）</p>
           <p class="text-xs text-pink-600 mt-2 border-t border-pink-200 pt-2">目標値：現時点では設定なし</p>
         </div>
       </div>
 
       <!-- PR経験 -->
       <div class="bg-gradient-to-br from-accent-yellow/20 to-accent-pink/10 rounded-xl p-5 border border-primary/10 mb-6">
-        <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">PR・案件経験</p>
-        <p class="text-dark">PR・モニター等の投稿実績があり、企業からリピート依頼を受けた経験がある。</p>
+        <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">PR・案件実績</p>
+        <p class="text-dark font-medium leading-relaxed">
+          PR投稿実績は36件。同じ企業から4回、リピートで依頼を受けています。一次情報の丁寧な検証とメリット・デメリットを誠実に伝えるレビュー姿勢が評価され、企業様との強固な信頼関係構築につながっています。
+        </p>
       </div>
 
       <!-- XとLIPSの運用方針の違い -->
@@ -280,8 +382,8 @@
             Veronica ヴェロニカ 🧸ᩚ<br>
             コスメレビュー、メイク、スキンケアを発信
           </p>
-          <p class="text-sm text-blue-900 font-bold">フォロワー：514人 → 559人（+45人）</p>
-          <p class="text-xs text-blue-600">2026年9月14日 〜 2026年10月26日</p>
+          <p class="text-sm text-blue-900 font-bold">フォロワー：514人 → 560人（+46人）</p>
+          <p class="text-xs text-blue-600">2026年9月14日 〜 2026年11月16日時点（学校演習検証期間）</p>
         </div>
 
         <!-- LIPS -->
@@ -295,8 +397,8 @@
             ベロニカ フォロバします✨️<br>
             Xより詳しい商品特徴・使用感を長文で掲載
           </p>
-          <p class="text-sm text-pink-900 font-bold">フォロワー：412人 → 427人（+15人）</p>
-          <p class="text-xs text-pink-600">2026年9月14日 〜 2026年10月26日</p>
+          <p class="text-sm text-pink-900 font-bold">フォロワー：412人 → 433人（+21人）</p>
+          <p class="text-xs text-pink-600">2026年9月14日 〜 2026年11月16日時点（学校演習検証期間）</p>
         </div>
       </div>
     </section>
@@ -317,7 +419,7 @@
           <div class="text-4xl mb-3">💄</div>
           <h3 class="font-bold text-primary mb-2 text-lg">コスメ・スキンケアレビュー</h3>
           <p class="text-sm text-text-main">
-            実際に購入・使用した商品のみをレビュー。未使用品の投稿は行わない。
+            実際に購入・使用した商品のみをレビュー。「試して、直して、続けて育てる」を軸に、メリットだけでなくデメリットも正直に発信。未使用品の投稿は行わない。
           </p>
         </div>
 
@@ -333,9 +435,9 @@
         <!-- 写真撮影 -->
         <div class="bg-gradient-to-br from-pink-100 to-pink-50 rounded-xl p-6">
           <div class="text-4xl mb-3">📸</div>
-          <h3 class="font-bold text-primary mb-2 text-lg">本人撮影・文章作成</h3>
+          <h3 class="font-bold text-primary mb-2 text-lg">本人撮影・執筆・AI活用</h3>
           <p class="text-sm text-text-main">
-            本人撮影の商品写真や使用写真を掲載。投稿本文はAI下書き支援を使用し、最終的に本人が確認・採用。
+            本人撮影の商品写真や使用写真を掲載。AIは下書きと案出しに活用し、企画・情報確認・表現の調整・最終検品は本人が担当。
           </p>
         </div>
 
@@ -352,32 +454,59 @@
 
     <!-- 
     ═══════════════════════════════════════════════════════════════
-    📱 SNSタイムライン埋め込み
+    📱 SNSプロフィール・リンク
     ═══════════════════════════════════════════════════════════════
     -->
     <section class="mb-12 scroll-mt-24" id="timeline">
       <h2 class="text-3xl font-bold text-dark mb-8 flex items-center gap-2">
-        <span>📱</span> タイムライン
+        <span>📱</span> SNSプロフィール
       </h2>
 
       <div class="grid md:grid-cols-2 gap-6">
-        <!-- Xタイムライン -->
+        <!-- X (Twitter) プロフィール -->
         <div class="bg-card-bg rounded-2xl p-6 shadow-lg border-2 border-primary/20">
           <h3 class="text-xl font-bold text-dark mb-4 flex items-center gap-2">
             <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            X (Twitter) タイムライン
+            X (Twitter) プロフィール
           </h3>
 
-          <!-- Xタイムライン埋め込み -->
-          <div class="bg-white rounded-xl shadow-inner">
-            <a class="twitter-timeline" data-height="600" data-theme="light"
-              href="https://twitter.com/Veronica_kuma?ref_src=twsrc%5Etfw">
-              Tweets by Veronica_kuma
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 shadow-inner">
+            <div class="text-center mb-6">
+              <div class="text-6xl mb-4">🧸✨</div>
+              <h4 class="text-2xl font-bold text-blue-900 mb-2">Veronica ヴェロニカ</h4>
+              <p class="text-blue-700 mb-4">@Veronica_kuma</p>
+              <p class="text-sm text-blue-600 mb-6">コスメ・メイク・スキンケア発信中🧸ᩚ</p>
+            </div>
+
+            <div class="space-y-3 mb-6">
+              <div class="bg-white rounded-lg p-4">
+                <h5 class="font-bold text-blue-900 mb-2">投稿内容</h5>
+                <ul class="text-sm text-blue-700 space-y-1">
+                  <li>• コスメ・スキンケアレビュー</li>
+                  <li>• 週次「今日のメイク」・使い切り</li>
+                  <li>• 一次情報の正直な使用感レポート</li>
+                  <li>• PR案件・モニター発信</li>
+                </ul>
+              </div>
+
+              <div class="bg-white rounded-lg p-4">
+                <h5 class="font-bold text-blue-900 mb-2">コンテンツの特徴</h5>
+                <ul class="text-sm text-blue-700 space-y-1">
+                  <li>• 本人撮影の写真・自然光検証</li>
+                  <li>• メリット・デメリット両面記載</li>
+                  <li>• キーワードを意識した本文設計</li>
+                  <li>• 継続的な検証と改善</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://twitter.com/Veronica_kuma" target="_blank" rel="noopener noreferrer"
+              class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:scale-105 transition-all shadow-lg font-bold">
+              X (Twitter) で見る →
             </a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
 
@@ -620,7 +749,7 @@
           <h3 class="font-bold text-dark text-base sm:text-lg">FILL THE FRAME カプリロイルサリチル酸1% デイリーセラム 30ml（2026年10月26日公開 / X PR提供）</h3>
         </div>
         <p class="text-sm text-text-main mb-4 leading-relaxed">
-          企業様からのPR提供商品として、本日10/26にレビューを公開。「本品＋テクスチャー＋注釈付き鼻アップ」の画像3枚構成で実体験を検証中。2週間の毛穴・角質ケアによる肌変化を追跡測定し、PR投稿における信頼性と反響の維持を検証していきます。
+          企業様からのPR提供商品として、2026年10月26日にレビューを公開。「本品＋テクスチャー＋注釈付き鼻アップ」の画像3枚構成で実体験を検証中。2週間の毛穴・角質ケアによる肌変化を追跡測定し、PR投稿における信頼性と反響の維持を検証していきます。
         </p>
         <div class="grid grid-cols-3 gap-3 mb-3">
           <div class="text-center bg-white rounded-lg p-3">
@@ -636,7 +765,7 @@
             <p class="text-xs text-text-main">継続効果を追跡</p>
           </div>
         </div>
-        <p class="text-xs text-text-main">※ 本日（2026年10月26日）公開の最新PR。7日後・14日後の数値を記録・分析予定。</p>
+        <p class="text-xs text-text-main">※ 2026年10月26日公開のPR案件。初動・7日後・14日後の推移を追跡し、長期的な反響を分析中。</p>
       </div>
     </section>
 
@@ -878,7 +1007,7 @@
       <span class="text-accent-pink">💜</span>
     </p>
     <p class="title-font italic text-sm tracking-widest text-primary/80 inline-flex items-center justify-center gap-2">
-      <span>Last Updated: October 26, 2026</span>
+      <span>Last Updated: 2026年11月16日</span>
       <span class="not-italic text-sm">🐾</span>
     </p>
   </footer>
